@@ -1,3 +1,25 @@
+
+<?php
+use Projeto\Usuario;
+use Projeto\ControleDeAcesso;
+require_once "../vendor/autoload.php";
+
+// Mensagem de feedback relacionada ao acesso 
+if( isset($_GET['acesso_proibido'])){
+	$feedback = "Você deve logar primeiro!";
+} elseif ( isset($_GET['campos_obrigatorios'])) {
+	$feedback = 'Você deve preencher os dois campos!';
+} elseif ( isset($_GET['nao_encontrado'])){
+	$feedback = 'Usuário não encontrado';
+} elseif ( isset($_GET['senha_incorreta'])){
+	$feedback = 'Senha Incorreta!';
+} elseif ( isset($_GET['logout'])){
+	$feedback = 'Você saiu do sistema';
+} elseif ( isset($_GET['faca_o_login'])){
+	$feedback = 'Cadastro feito com sucesso! Faça o login para entrar no "Livro Solto"!';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -31,7 +53,7 @@
                 <div class="col-md-6 col-lg-7 d-flex align-items-center">
                   <div class="card-body p-4 p-lg-5 text-black">
     
-                    <form>
+                    <form action="" method="post" id="form-login" name="form-login">
     
                       <div class="d-flex align-items-center mb-3 pb-1">
                         <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -39,27 +61,62 @@
                       </div>
     
                       <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Faça login com sua conta</h5>
+
+                      <?php if(isset($feedback)){?>
+				                <p class="my-2 alert alert-warning text-center">
+			                	<?= $feedback?> <i class="bi bi-x-circle-fill"></i> </p>
+                      <?php } ?>
     
                       <div class="form-outline mb-4">
-                        <input type="email" id="form2Example17" class="form-control form-control-lg" />
-                        <label class="form-label" for="form2Example17">Email</label>
+                        <label class="form-label" for="email">Email</label>
+                        <input type="email" name="email" class="form-control form-control-lg" />
                       </div>
     
                       <div class="form-outline mb-4">
-                        <input type="password" id="form2Example27" class="form-control form-control-lg" />
-                        <label class="form-label" for="form2Example27">Senha</label>
+                        <label class="form-label" for="senha">Senha</label>
+                        <input type="password" name="senha" class="form-control form-control-lg" />
                       </div>
     
                       <div class="pt-1 mb-4">
-                        <a href="listadelivros.php" alt="Link para visualizar livros disponíveis e entrar na conta"><button class="btn btn-lg btn-block btn-login" type="button">Login</button></a>
+                        <a href="listadelivros.php" alt="Link para visualizar livros disponíveis e entrar na conta"><button class="btn btn-lg btn-block btn-login" type="submit" name="entrar">Login</button></a>
                       </div>
-    
+                        <!-- Aqui nós estamos criando um sistema de recuperação de senha, caso o usuário tenha esquecido -->
                       <a class="small text-muted esqueceu-a-senha" href="#!" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalSenha" title="recuperar senha">Esqueceu a senha?</a>
                       <a href="cadastro.php" alt="Link para cadastrar uma conta"><p class="mb-5 pb-lg-2 mt-2" >Não possui cadastro? Cadastre-se</p></a>
                       <a class="small text-muted termos mx-3" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Termos de uso</a>
                       <a href="#!" class="small text-muted privacidade" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalDois">Política de privacidade</a>
                     </form>
-    
+<?php
+// Verificação de campos do formulário
+if (isset($_POST['entrar'])){
+if(empty($_POST['email']) || empty($_POST['senha'])){
+	header("location:login.php?campos_obrigatorios");
+} else {
+  // Buscando um usuário no banco de dados para fazer o login 
+  $usuario = new Usuario;
+	$usuario->setEmail($_POST['email']);
+  $dados = $usuario->buscar();
+	if (!$dados)	{
+		header ("location:login.php?nao_encontrado");
+	} else {
+		if(password_verify($_POST['senha'], $dados['senha'])){
+      $sessao = new ControleDeAcesso;
+			$sessao->login($dados['id'], $dados['nome']);
+			header("location:listadelivros.php");
+		} else {
+      header ("location:login.php?senha_incorreta");
+		}
+	}
+}
+
+// Criando sistema de recuperação de senha 
+
+
+}
+
+
+
+?>
                   </div>
                 </div>
               </div>
@@ -142,16 +199,43 @@ aria-hidden="true">
       <h5 class="modal-title" id="exampleModalLabel">Recupere sua senha</h5>
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
-    <form class="p-4">
+    <form class="p-4" action="" method="post">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Digite o email cadastrado para a recuperação</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
         <div id="emailHelp" class="form-text" aria-placeholder="exemplo@gmail.com.br">exemplo@gmail.com.br</div>
+        <?php
+
+// if (isset($_POST['recuperar'])){
+
+  // $email = $mysqli->escape_string($_POST['email']);
+
+  // if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+  //   $erro[]="E-mail inválido";
+    
+  // }
+
+  // $sql = "SELECT senha, id FROM usuario WHERE email = :email";
+
+
+// $novaSenha = substr(md5(time()),0,6);
+
+// echo $novaSenha;
+// $novaSenhaCripto = md5(md5($novaSenha));
+
+
+// };
+
+
+?>
       </div>
-      </form>
+
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-      <button type="submit" class="btn btn-primary ver-disponiveis">Recuperar senha</button>
+      <button type="submit"  class="btn btn-primary ver-disponiveis" name="recuperar">Recuperar senha</button>
+      </form>
+      
+
         </div>
       </div>
     </div>

@@ -19,7 +19,7 @@ class Livro{
     }
 
     public function upload(array $arquivo){
-        $tiposvalidos = ["image/png", "image/jpeg", "image/gif", "image/svg+xml"];
+        $tiposvalidos = ["image/png", "image/jpeg"];
         if (!in_array($arquivo['type'], $tiposvalidos)) {
             die("<script>alert('Formato inválido!'); history.back()</script>");
         } 

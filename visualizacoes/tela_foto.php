@@ -115,21 +115,15 @@ if (isset($_POST['inserir'])) {
                 Selecione um horário válido
               </div>
             </div>
-
-            
           <hr class="my-4">
-
-          
-
-
-          
           </div>
-         
             <label for="formFile" class="form-label">Escolha um arquivo de imagem para envio</label>
           <div class="mb-3 text-center envio-de-arquivo">
             <input class="form-control" type="file" accept="image/png, image/jpg" id="upload">
           </div>
-          <div class="enviar-foto form-signin mb-5"><a href="loginvalida.php"><button class="mt-4 btn button-foto" type="button">Enviar</button></a></div>
+          <div class="enviar-foto form-signin mb-5">
+            <button class="mt-4 btn button-foto" name="inserir" id="inserir" type="button">Enviar</button>
+          </div>
         </form>
       </div>
     </div>

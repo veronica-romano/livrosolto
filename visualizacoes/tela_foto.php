@@ -129,7 +129,7 @@ if (isset($_POST['inserir'])) {
           <div class="mb-3 text-center envio-de-arquivo">
             <input class="form-control" type="file" accept="image/png, image/jpg" id="upload">
           </div>
-          <div class="enviar-foto form-signin mb-5"><a href="loginvalida.php"><button class="mt-4 btn button-foto" type="button">Enviar</button></a></div>
+          <div class="enviar-foto form-signin mb-5"><button class="mt-4 btn button-foto" type="button">Enviar</button></a></div>
         </form>
       </div>
     </div>

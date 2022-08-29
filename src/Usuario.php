@@ -14,6 +14,22 @@ class Usuario{
     public function __construct(){ //método que functiona na criação do objeto
         $this->conexao = Banco::conecta();
     }
+    
+    public function cadastrar():void{
+        $sql="INSERT INTO usuarios(nome, email, senha, senac) VALUES (:nome, :email, :senha, :senac)";
+
+        try{
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindParam(":nome", $this->nome, PDO::PARAM_STR);
+            $consulta->bindParam(":email", $this->email, PDO::PARAM_STR);
+            $consulta->bindParam(":senha", $this->senha, PDO::PARAM_STR);
+            $consulta->bindParam(":senac", $this->senac, PDO::PARAM_STR);
+            $consulta->execute();
+        } catch(Exception $erro){
+            die ("Erro: ". $erro->getMessage());
+        }
+   }
+
 
     public function listar(){
         $sql = "SELECT id, nome, email, livros, senac FROM usuarios ORDER BY nome";
@@ -92,6 +108,21 @@ class Usuario{
         }
         
     }
+
+    
+    public function buscar() {
+        $sql = "SELECT * FROM usuarios WHERE email = :email";
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindParam(":email", $this->email, PDO::PARAM_STR);
+            $consulta->execute();
+            $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $erro) {
+            die("Erro: ". $erro->getMessage());
+        }
+        return $resultado;
+    }
+
 
 
     public function getConexao(): PDO

@@ -14,7 +14,8 @@ if (isset($_POST['inserir'])) {
   $livro->setDiasEntrega($_POST['dias']);
   $imagem = $_FILES['imagem'];
   $livro->setCapa($imagem['name']);
-  $noticia->upload($imagem);
+  $livro->upload($imagem);
+  $livro->inserir();
   header("location:listadelivros.php");
 }
 ?>

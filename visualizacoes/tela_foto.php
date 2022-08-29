@@ -74,14 +74,14 @@ if (isset($_POST['inserir'])) {
               <label for="country" class="form-label categoria">Gênero</label>
               <select class="form-select" id="country" name="genero" required>
                 <option value=""></option>
-                <option value="">Romance</option>
-                <option value="">Terror</option>
-                <option value="">Fantasia</option>
-                <option value="">Ficção</option>
-                <option value="">Filosofia</option>
-                <option value="">Tecnologia</option>
-                <option value="">Saúde</option>
-                <option value="">Linguagem</option>
+                <option value="romance">Romance</option>
+                <option value="terror">Terror</option>
+                <option value="fantasia">Fantasia</option>
+                <option value="ficcao">Ficção</option>
+                <option value="filosofia">Filosofia</option>
+                <option value="tecnologia">Tecnologia</option>
+                <option value="saude">Saúde</option>
+                <option value="linguagem">Linguagem</option>
               </select>
               <div class="invalid-feedback">
                 Selecione um genero válido.
@@ -92,11 +92,11 @@ if (isset($_POST['inserir'])) {
               <label for="country" class="form-label categoria">Dias de Entrega</label>
               <select class="form-select" id="dias" name="dias" required>
                 <option value=""></option>
-                <option value="">Segunda</option>
-                <option value="">Terça</option>
-                <option value="">Quarta</option>
-                <option value="">Quinta</option>
-                <option value="">Sexta</option>
+                <option value="segunda">Segunda</option>
+                <option value="terca">Terça</option>
+                <option value="quarta">Quarta</option>
+                <option value="quinta">Quinta</option>
+                <option value="sexta">Sexta</option>
 
               </select>
               <div class="invalid-feedback">
@@ -107,9 +107,9 @@ if (isset($_POST['inserir'])) {
               <label for="country" class="form-label categoria">Horários de Entrega</label>
               <select class="form-select" id="country" name="horarios" required>
                 <option value=""></option>
-                <option value="">Manhã</option>
-                <option value="">Tarde</option>
-                <option value="">Noite</option>
+                <option value="manha">Manhã</option>
+                <option value="tarde">Tarde</option>
+                <option value="noite">Noite</option>
               </select>
               <div class="invalid-feedback">
                 Selecione um horário válido
@@ -122,7 +122,7 @@ if (isset($_POST['inserir'])) {
             <input class="form-control" type="file" accept="image/png, image/jpg" id="upload">
           </div>
           <div class="enviar-foto form-signin mb-5">
-            <button class="mt-4 btn button-foto" name="inserir" id="inserir" type="button">Enviar</button>
+            <button class="mt-4 btn button-foto" name="inserir" id="inserir" type="submit">Enviar</button>
           </div>
         </form>
       </div>

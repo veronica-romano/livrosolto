@@ -2,12 +2,12 @@
         <h2 class="text-center pt-5 mb-5">Nossa equipe</h2>
         <div class="divisao">
                 <div class="text-center col-12 col-md-6 col-lg-2 mb-5">
-                    <img src="../imagens/integrantes/gabriel_luna.jpg" alt="Rapaz de blusa preta, barba, com um fundo iluminado pelo sol" class="adriel">
+                    <img src="../imagens/integrantes/gabriel_luna.jpg" alt="Gabriel, rapaz de blusa preta, barba, com um fundo iluminado pelo sol" class="adriel">
                     <h3 class="text-center mt-2">Gabriel Luna</h3>
                     <button class="btn btn-equipe"><a href="https://www.instagram.com/el.bin/" alt="Link para o perfil de Gabriel" target="_blank" rel="external">Veja mais</a></button> 
                 </div> 
                 <div class="text-center col-12 col-md-6 col-lg-2 mb-5">
-                    <img src="../imagens/integrantes/veronica.jpg" alt="Moça com camisa preta e cabelo azulado" class="adriel">
+                    <img src="../imagens/integrantes/veronica.jpg" alt="Veronica, moça com camisa preta e cabelo azulado" class="adriel">
                     <h3 class="mt-2">Veronica</h3>
                     <button class="btn btn-equipe"><a href="https://lnk.bio/veronica-silva" alt="Link para perfil da Veronica" target="_blank" rel="external">Veja mais</a></button> 
                 </div>

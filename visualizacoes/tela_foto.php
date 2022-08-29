@@ -1,16 +1,29 @@
+<?php
+require_once "../vendor/autoload.php";
+use Projeto\Livro;
+use Projeto\Usuario;
+$usuario = new Usuario;
+if (isset($_POST['inserir'])) {
+  $livro = new Livro;
+  $livro->setTitulo($_POST['titulo']);
+  $livro->setAutor($_POST['autor']);
+  $livro->setDescricao($_POST['descricao']);
+  $livro->setGenero($_POST['genero']);
+  $livro->setIdUsuarioEntrega($_SESSION['id']);
+  $livro->setHorariosEntrega($_POST['horarios']);
+  $livro->setDiasEntrega($_POST['dias']);
+  $imagem = $_FILES['imagem'];
+  $livro->setCapa($imagem['name']);
+  $noticia->upload($imagem);
+  header("location:listadelivros.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Anuncie seu livro para troca ou doação">
   <meta name="keywords" content="Anunciar livro, postar livro">
   <title>Livro Solto - Anunciar livro</title>
-  <link rel="shortcut icon" href="../imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
-  <link rel="stylesheet" href="bootstrap.css">
-  <link rel="stylesheet" href="estilo.css">
 <?php
   require_once "../inc/cabecalho-geral.php";
 ?>
@@ -30,19 +43,35 @@
   
       </div>
       <div class="col-md-12 col-lg-12 text-center">
-        <form class="needs-validation" novalidate>
+        <form enctype="multipart/form-data" action="" method="post" id="form-inserir" name="form-inserir" class="needs-validation" novalidate>
           <div class="row g-3 mx-auto">
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-6 col-lg-4" >
               <label for="firstName" class="form-label title">Título</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <input type="text" class="form-control" id="firstName" name="titulo" placeholder="" value="" required>
               <div class="invalid-feedback">
-                Valid first name is required.
+                O título é obrigatório.
               </div>
             </div>
 
-            <div class="col-md-6">
-              <label for="country" class="form-label categoria">Categoria</label>
-              <select class="form-select" id="country" required>
+            <div class="col-sm-12 col-md-6 col-lg-4">
+              <label for="autor" class="form-label title">Autor</label>
+              <input type="text" class="form-control" id="autor" placeholder="" name="autor" value="" required>
+              <div class="invalid-feedback">
+                O autor é obrigatório.
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4">
+              <label for="autor" class="form-label title">Descrição</label>
+              <input type="text" class="form-control" id="descricao" placeholder="" name="descricao" value="" required>
+              <div class="invalid-feedback">
+                O autor é obrigatório.
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <label for="country" class="form-label categoria">Gênero</label>
+              <select class="form-select" id="country" name="genero" required>
                 <option value=""></option>
                 <option value="">Romance</option>
                 <option value="">Terror</option>
@@ -54,7 +83,35 @@
                 <option value="">Linguagem</option>
               </select>
               <div class="invalid-feedback">
-                Please select a valid country.
+                Selecione um genero válido.
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <label for="country" class="form-label categoria">Dias de Entrega</label>
+              <select class="form-select" id="dias" name="dias" required>
+                <option value=""></option>
+                <option value="">Segunda</option>
+                <option value="">Terça</option>
+                <option value="">Quarta</option>
+                <option value="">Quinta</option>
+                <option value="">Sexta</option>
+
+              </select>
+              <div class="invalid-feedback">
+                Selecione um dia válido
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <label for="country" class="form-label categoria">Horários de Entrega</label>
+              <select class="form-select" id="country" name="horarios" required>
+                <option value=""></option>
+                <option value="">Manhã</option>
+                <option value="">Tarde</option>
+                <option value="">Noite</option>
+              </select>
+              <div class="invalid-feedback">
+                Selecione um horário válido
               </div>
             </div>
 
@@ -69,7 +126,7 @@
          
             <label for="formFile" class="form-label">Escolha um arquivo de imagem para envio</label>
           <div class="mb-3 text-center envio-de-arquivo">
-            <input class="form-control"type="file" accept="image/*" id="upload">
+            <input class="form-control" type="file" accept="image/png, image/jpg" id="upload">
           </div>
           <div class="enviar-foto form-signin mb-5"><a href="loginvalida.php"><button class="mt-4 btn button-foto" type="button">Enviar</button></a></div>
         </form>

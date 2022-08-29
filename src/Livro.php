@@ -18,6 +18,17 @@ class Livro{
         $this->conexao = Banco::conecta();
     }
 
+    public function upload(array $arquivo){
+        $tiposvalidos = ["image/png", "image/jpeg", "image/gif", "image/svg+xml"];
+        if (!in_array($arquivo['type'], $tiposvalidos)) {
+            die("<script>alert('Formato inválido!'); history.back()</script>");
+        } 
+        $nome = $arquivo['name'];
+        $temporario = $arquivo['tmp_name'];
+        $destino = "../imagem/".$nome;
+        move_uploaded_file($temporario, $destino);
+    }
+
     public function listar(){
         $sql = "SELECT id, titulo, capa, descricao, genero, id_usuario_entrega, id_usuario_recebe, diasEntrega, horariosEntrega, autor FROM livros ORDER BY titulo";
         try {
@@ -91,6 +102,9 @@ class Livro{
             die("Erro: ".$erro->getMessage());
         }
     }
+
+
+
 
     public function getId(): int {
         return $this->id;

@@ -29,5 +29,5 @@
 </div>
 
 
-<script src="bootstrap.bundle.js"></script>
-<script src="nosso.js"></script>
+<script src="../visualizacoes/bootstrap.bundle.js"></script>
+<script src="../visualizacoes/nosso.js"></script>

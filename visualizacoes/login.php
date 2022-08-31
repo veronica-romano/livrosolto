@@ -80,7 +80,6 @@ if( isset($_GET['acesso_proibido'])){
                       <div class="pt-1 mb-4">
                         <a href="listadelivros.php" alt="Link para visualizar livros disponíveis e entrar na conta"><button class="btn btn-lg btn-block btn-login" type="submit" name="entrar">Login</button></a>
                       </div>
-                        <!-- Aqui nós estamos criando um sistema de recuperação de senha, caso o usuário tenha esquecido -->
                       <a class="small text-muted esqueceu-a-senha" href="#!" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalSenha" title="recuperar senha">Esqueceu a senha?</a>
                       <a href="cadastro.php" alt="Link para cadastrar uma conta"><p class="mb-5 pb-lg-2 mt-2" >Não possui cadastro? Cadastre-se</p></a>
                       <a class="small text-muted termos mx-3" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Termos de uso</a>
@@ -108,10 +107,6 @@ if(empty($_POST['email']) || empty($_POST['senha'])){
 		}
 	}
 }
-
-// Criando sistema de recuperação de senha 
-
-
 }
 
 
@@ -205,27 +200,6 @@ aria-hidden="true">
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
         <div id="emailHelp" class="form-text" aria-placeholder="exemplo@gmail.com.br">exemplo@gmail.com.br</div>
         <?php
-
-// if (isset($_POST['recuperar'])){
-
-  // $email = $mysqli->escape_string($_POST['email']);
-
-  // if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-  //   $erro[]="E-mail inválido";
-    
-  // }
-
-  // $sql = "SELECT senha, id FROM usuario WHERE email = :email";
-
-
-// $novaSenha = substr(md5(time()),0,6);
-
-// echo $novaSenha;
-// $novaSenhaCripto = md5(md5($novaSenha));
-
-
-// };
-
 
 ?>
       </div>

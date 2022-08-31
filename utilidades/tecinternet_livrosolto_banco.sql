@@ -52,7 +52,7 @@ CREATE TABLE `usuarios` (
   `email` varchar(45) NOT NULL,
   `livros` varchar(45) DEFAULT NULL,
   `senac` varchar(45) NOT NULL,
-  `tipo` enum('admin','user')
+  `tipo` enum('admin','user') NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

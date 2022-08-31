@@ -56,6 +56,14 @@ if (isset($_POST['inserir'])) {
 					<option value="itaquera">Itaquera</option>
 				</select>
 			</div>
+			<div class="mb-3">
+				<label class="form-label" for="tipo">Tipo:</label>
+				<select class="form-select form-control" name="tipo" id="tipo" required>
+					<option value=""></option>
+                    <option value="admin">Admin</option>
+					<option value="user">User</option>
+				</select>
+			</div>
                 <button class="btn btn-success  col" id="inserir" name="inserir"><i class="bi bi-save"></i> Inserir Usuário</button>
                 <a href="usuarios.php" class="btn btn-outline-danger  col" id="cancelar" name="cancelar"><i class="bi bi-save"></i> Cancelar</a>
 		</form>

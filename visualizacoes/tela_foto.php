@@ -2,6 +2,9 @@
 require_once "../vendor/autoload.php";
 use Projeto\Livro;
 use Projeto\Usuario;
+use Projeto\ControleDeAcesso;
+$sessao = new ControledeAcesso;
+$sessao->login($_SESSION['id'], $_SESSION['nome']);
 $usuario = new Usuario;
 if (isset($_POST['inserir'])) {
   $livro = new Livro;
@@ -127,9 +130,9 @@ if (isset($_POST['inserir'])) {
          
             <label for="formFile" class="form-label">Escolha um arquivo de imagem para envio</label>
           <div class="mb-3 text-center envio-de-arquivo">
-            <input class="form-control" type="file" accept="image/png, image/jpg" id="upload">
+            <input class="form-control" type="file" name="imagem" accept="image/png, image/jpg" id="upload">
           </div>
-          <div class="enviar-foto form-signin mb-5"><button class="mt-4 btn button-foto" type="button">Enviar</button></a></div>
+          <div class="enviar-foto form-signin mb-5"><button class="mt-4 btn button-foto" name="inserir" type="submit">Enviar</button></a></div>
         </form>
       </div>
     </div>

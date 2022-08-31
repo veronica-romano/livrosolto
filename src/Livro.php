@@ -42,7 +42,7 @@ class Livro{
     }
 
     public function inserir():void{
-        $sql = "INSERT INTO  livros(titulo, capa, descricao, genero, id_usuario_entrega, id_usuario_recebe, diasEntrega, horariosEntrega, autor) VALUES (:titulo, :capa, :descricao, :genero, :id_usuario_entrega, :id_usuario_recebe, :diasEntrega, :horariosEntrega, :autor) ";
+        $sql = "INSERT INTO  livros(titulo, capa, descricao, genero, id_usuario_entrega, diasEntrega, horariosEntrega, autor) VALUES (:titulo, :capa, :descricao, :genero, :id_usuario_entrega, :diasEntrega, :horariosEntrega, :autor) ";
         try {
             $consulta = $this->conexao->prepare($sql);
             $consulta->bindParam(":titulo", $this->titulo, PDO::PARAM_STR);
@@ -50,7 +50,6 @@ class Livro{
             $consulta->bindParam(":descricao", $this->descricao, PDO::PARAM_STR);
             $consulta->bindParam(":genero", $this->genero, PDO::PARAM_STR);
             $consulta->bindParam(":id_usuario_entrega", $this->id_usuario_entrega, PDO::PARAM_INT);
-           // $consulta->bindParam(":id_usuario_recebe", $this->tipo, PDO::PARAM_INT);
             $consulta->bindParam(":diasEntrega", $this->diasEntrega, PDO::PARAM_STR);
             $consulta->bindParam(":horariosEntrega", $this->horariosEntrega, PDO::PARAM_STR);
             $consulta->bindParam(":autor", $this->autor, PDO::PARAM_STR);
@@ -81,7 +80,6 @@ class Livro{
             $consulta->bindParam(":descricao", $this->descricao, PDO::PARAM_STR);
             $consulta->bindParam(":genero", $this->genero, PDO::PARAM_STR);
             $consulta->bindParam(":id_usuario_entrega", $this->id_usuario_entrega, PDO::PARAM_INT);
-           // $consulta->bindParam(":id_usuario_recebe", $this->tipo, PDO::PARAM_INT);
             $consulta->bindParam(":diasEntrega", $this->diasEntrega, PDO::PARAM_STR);
             $consulta->bindParam(":horariosEntrega", $this->horariosEntrega, PDO::PARAM_STR);
             $consulta->bindParam(":autor", $this->autor, PDO::PARAM_STR);

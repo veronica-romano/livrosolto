@@ -23,20 +23,26 @@ $listaDeLivros = $livros->listar();
     </style>
 
 
-    <div class="mt-4 ms-3"><form action="">
-        <label for="filtrar" class="filtrar">Filtrar</label>
-        <select name="filtrar" id="" class="select-livros">
-          <option></option>
-          <option>Romance</option>
-          <option>Terror</option>
-          <option>Fantasia</option>
-          <option>Ficção</option>
-          <option>Filosofia</option>
-          <option>Tecnologia</option>
-          <option>Saúde</option>
-          <option>Linguagem</option>
-        </select>
-    </form></div>
+    <div class="mt-4 ms-3 row">
+        <form action="" class="form-inline col-6">
+            <select name="filtrar" id="" class="select-livros form-control">
+                <option></option>
+                <option>Romance</option>
+                <option>Terror</option>
+                <option>Fantasia</option>
+                <option>Ficção</option>
+                <option>Filosofia</option>
+                <option>Tecnologia</option>
+                <option>Saúde</option>
+                <option>Linguagem</option>
+            </select>
+        </form>
+
+        <form class="form-inline col-6 justify-content-between">
+            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+        </form>
+    </div>
     <main class="p-3">
         <?php
         foreach ($listaDeLivros as $livros) {

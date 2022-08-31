@@ -32,7 +32,7 @@ class Usuario{
 
 
     public function listar(){
-        $sql = "SELECT id, nome, email, livros, senac FROM usuarios ORDER BY nome";
+        $sql = "SELECT id, nome, email, livros, senac, tipo FROM usuarios ORDER BY nome";
         try {
             $consulta = $this->conexao->prepare($sql);
             $consulta->execute();
@@ -43,13 +43,14 @@ class Usuario{
         return $resultado;
     }
     public function inserir():void{
-        $sql = "INSERT INTO  usuarios(nome, email, senha, livros) VALUES (:nome, :email, :senha, :senac) "; //named param
+        $sql = "INSERT INTO  usuarios(nome, email, senha, livros, tipo) VALUES (:nome, :email, :senha, :senac, :tipo) "; //named param
         try {
             $consulta = $this->conexao->prepare($sql);
             $consulta->bindParam(":nome", $this->nome, PDO::PARAM_STR);
             $consulta->bindParam(":email", $this->email, PDO::PARAM_STR);
             $consulta->bindParam(":senha", $this->senha, PDO::PARAM_STR);
-            $consulta->bindParam(":senac", $this->tipo, PDO::PARAM_STR);
+            $consulta->bindParam(":senac", $this->senac, PDO::PARAM_STR);
+            $consulta->bindParam(":tipo", $this->tipo, PDO::PARAM_STR);
             $consulta->execute();
         } catch (Exception $erro) {
             die("Erro: ".$erro->getMessage());

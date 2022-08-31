@@ -45,15 +45,15 @@ class Livro{
         $sql = "INSERT INTO  livros(titulo, capa, descricao, genero, id_usuario_entrega, id_usuario_recebe, diasEntrega, horariosEntrega, autor) VALUES (:titulo, :capa, :descricao, :genero, :id_usuario_entrega, :id_usuario_recebe, :diasEntrega, :horariosEntrega, :autor) ";
         try {
             $consulta = $this->conexao->prepare($sql);
-            $consulta->bindParam(":titulo", $this->nome, PDO::PARAM_STR);
-            $consulta->bindParam(":capa", $this->email, PDO::PARAM_STR);
-            $consulta->bindParam(":descricao", $this->senha, PDO::PARAM_STR);
-            $consulta->bindParam(":genero", $this->tipo, PDO::PARAM_STR);
-            $consulta->bindParam(":id_usuario_entrega", $this->senha, PDO::PARAM_INT);
+            $consulta->bindParam(":titulo", $this->titulo, PDO::PARAM_STR);
+            $consulta->bindParam(":capa", $this->capa, PDO::PARAM_STR);
+            $consulta->bindParam(":descricao", $this->descricao, PDO::PARAM_STR);
+            $consulta->bindParam(":genero", $this->genero, PDO::PARAM_STR);
+            $consulta->bindParam(":id_usuario_entrega", $this->id_usuario_entrega, PDO::PARAM_INT);
            // $consulta->bindParam(":id_usuario_recebe", $this->tipo, PDO::PARAM_INT);
-            $consulta->bindParam(":diasEntrega", $this->senha, PDO::PARAM_STR);
-            $consulta->bindParam(":horariosEntrega", $this->tipo, PDO::PARAM_STR);
-            $consulta->bindParam(":autor", $this->tipo, PDO::PARAM_STR);
+            $consulta->bindParam(":diasEntrega", $this->diasEntrega, PDO::PARAM_STR);
+            $consulta->bindParam(":horariosEntrega", $this->horariosEntrega, PDO::PARAM_STR);
+            $consulta->bindParam(":autor", $this->autor, PDO::PARAM_STR);
             $consulta->execute();
         } catch (Exception $erro) {
             die("Erro: ".$erro->getMessage());
@@ -76,15 +76,15 @@ class Livro{
         $sql = "UPDATE   usuarios SET titulo = :titulo, capa = :capa, descricao = :descricao, genero = :genero, id_usuario_entrega = :id_usuario_entrega, diasEntrega = :diasEntrega, horariosEntrega = :horariosEntrega, autor = :autor WHERE id = :id";
         try {
             $consulta = $this->conexao->prepare($sql);
-            $consulta->bindParam(":titulo", $this->nome, PDO::PARAM_STR);
-            $consulta->bindParam(":capa", $this->email, PDO::PARAM_STR);
-            $consulta->bindParam(":descricao", $this->senha, PDO::PARAM_STR);
-            $consulta->bindParam(":genero", $this->tipo, PDO::PARAM_STR);
-            $consulta->bindParam(":id_usuario_entrega", $this->senha, PDO::PARAM_INT);
+            $consulta->bindParam(":titulo", $this->titulo, PDO::PARAM_STR);
+            $consulta->bindParam(":capa", $this->capa, PDO::PARAM_STR);
+            $consulta->bindParam(":descricao", $this->descricao, PDO::PARAM_STR);
+            $consulta->bindParam(":genero", $this->genero, PDO::PARAM_STR);
+            $consulta->bindParam(":id_usuario_entrega", $this->id_usuario_entrega, PDO::PARAM_INT);
            // $consulta->bindParam(":id_usuario_recebe", $this->tipo, PDO::PARAM_INT);
-            $consulta->bindParam(":diasEntrega", $this->senha, PDO::PARAM_STR);
-            $consulta->bindParam(":horariosEntrega", $this->tipo, PDO::PARAM_STR);
-            $consulta->bindParam(":autor", $this->tipo, PDO::PARAM_STR);
+            $consulta->bindParam(":diasEntrega", $this->diasEntrega, PDO::PARAM_STR);
+            $consulta->bindParam(":horariosEntrega", $this->horariosEntrega, PDO::PARAM_STR);
+            $consulta->bindParam(":autor", $this->autor, PDO::PARAM_STR);
             $consulta->bindParam(":id", $this->id, PDO::PARAM_INT);
             $consulta->execute();
         } catch (Exception $erro) {

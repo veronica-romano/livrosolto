@@ -67,6 +67,20 @@ if (isset($_POST['atualizar'])) {
 					<option value="itaquera">Itaquera</option>
 				</select>
 			</div>
+			<div class="mb-3">
+				<label class="form-label" for="tipo">Tipo:</label>
+				<select class="form-select form-control" name="tipo" id="tipo" required>
+				<?php
+                    if ($dados['tipo']) {
+                   ?>
+                   <option value="<?= $dados['tipo']?>" selected> <?= $dados['tipo']?> </option>
+                   <?php
+                }
+                ?>
+                    <option value="admin">Admin</option>
+					<option value="user">User</option>
+				</select>
+			</div>
                 <button class="btn btn-success  col" id="atualizar" name="atualizar"><i class="bi bi-save"></i> Atualizar </button>
                 <a href="usuarios.php" class="btn btn-outline-danger  col" id="cancelar" name="cancelar"><i class="bi bi-save"></i> Cancelar</a>
 		</form>

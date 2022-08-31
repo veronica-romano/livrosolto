@@ -37,6 +37,7 @@ $listaDeUsuarios = $usuario->listar();
                         <td><?=$usuario['nome']?></td>
                         <td><?=$usuario['email']?></td>
                         <td><?=$usuario['senac']?></td>
+                        <td><?=$usuario['tipo']?></td>
                         <td><a href="usuario-atualiza.php?id=<?=$usuario['id']?>" class="btn btn-primary">Update</a></td>
                         <td><a href="usuario-exclui.php?id=<?=$usuario['id']?>" class="btn btn-danger excluir" onclick="excluir()">Delete</a></td>
                     </tr>

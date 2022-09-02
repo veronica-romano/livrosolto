@@ -16,7 +16,12 @@ if (isset($_POST['inserir'])) {
   $livro->setIdUsuarioEntrega($_SESSION['id']);
   $livro->setHorariosEntrega($_POST['horarios']);
   $livro->setDiasEntrega($_POST['dias']);
-  $imagem = $_FILES['imagem'];
+  if (empty($_FILES['imagem']['name'])) {
+        $livro->setCapa($dados['imagem']);
+    } else {
+        $livro->upload($_FILES['imagem']);
+        $livro->setCapa($_FILES['imagem']['name']);
+    }
   $livro->setCapa($imagem['name']);
   $livro->upload($imagem);
   $livro->atualizar();

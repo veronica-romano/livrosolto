@@ -48,15 +48,22 @@ $listaDeLivros = $livros->listar();
         foreach ($listaDeLivros as $livros) {
             ?>
             <section class="linhaUm row mb-5 mt-5 card" style="max-width: 30rem;">
-            <div class="card-header text-center"><h3><?=$livros['titulo']?></h3></div>
-            <div class="col-3"><figure><img src="../imagens/livros/morro.jpg" alt="<?=$livros['titulo']?>"></figure></div>
+            <div class="card-header text-center">
+                <h3><?=$livros['titulo']?></h3>
+            </div>
+            <div class="col-3">
+                <figure><img src="../imagem/<?=$livros['capa']?>" ></figure>
+            </div>
             <h4><?=$livros['genero']?> de <?=$livros['autor']?></h4>
             <h5>Disponibilidade: <?=$livros['diasEntrega']?> , <?=$livros['horariosEntrega']?></h5>
-            <div><p><?=$livros['descricao']?></p></div>
+            <div>
+                <p><?=$livros['descricao']?></p>
+            </div>
             <div class="card-footer">
                 Usuário: <?=$livros['id_usuario_entrega']?> 
                 <a class="btn btn-primary" href="detalhes-livro.php?id=<?=$livros['id']?>">Ver detalhes</a>
-                <a class="btn btn-success" href="detalhes-livro.php?id=<?=$livros['id']?>">É esse!</a></div>
+                <a class="btn btn-success" href="detalhes-livro.php?id=<?=$livros['id']?>">É esse!</a>
+            </div>
             </section>
             <?php
             

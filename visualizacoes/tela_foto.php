@@ -122,7 +122,7 @@ if (isset($_POST['inserir'])) {
           </div>
             <label for="formFile" class="form-label">Escolha um arquivo de imagem para envio</label>
           <div class="mb-3 text-center envio-de-arquivo">
-            <input class="form-control" type="file" name="imagem" accept="image/png, image/jpg" id="upload">
+            <input class="form-control" type="file" name="imagem" accept=" image/jpg, image/png" id="upload">
           </div>
           <div class="enviar-foto form-signin mb-5">
             <button class="mt-4 btn button-foto" name="inserir" id="inserir" type="submit">Enviar</button>

@@ -11,7 +11,7 @@ $livro = $detalhe->listarUm();
 
 <article class="row d-flex justify-content-evenly ">
     <section class="col-6 mb-5 mt-5 card shadow-lg" style="max-width: 30rem;">
-        <div class="col-3"><figure><img src="../imagens/livros/morro.jpg" alt="<?=$livro['titulo']?>"></figure></div>
+        <div class="col-3"><figure><img src="../imagem/<?=$livro['capa']?>" alt="<?=$livro['titulo']?>"></figure></div>
         <div class="card-footer">
             <a class="btn btn-success form-control" href="detalhes-livro.php?id=<?=$livro['id']?>">É esse!</a>
         </div>

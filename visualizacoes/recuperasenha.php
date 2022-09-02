@@ -7,22 +7,15 @@ use Projeto\ControleDeAcesso;
 require_once "../vendor/autoload.php";
 
 
-// require 'mailer/PHPMailerAutoload.php';
-
-// Mensagem de feedback relacionada ao acesso 
-if( isset($_GET['acesso_proibido'])){
-	$feedback = "Você deve logar primeiro!";
-} elseif ( isset($_GET['campos_obrigatorios'])) {
-	$feedback = 'Você deve preencher os dois campos!';
+if( isset($_GET['campo_obrigatorio'])) {
+	$feedback = 'Preencha o campo "Email"!';
 } elseif ( isset($_GET['nao_encontrado'])){
 	$feedback = 'Usuário não encontrado';
-} elseif ( isset($_GET['senha_incorreta'])){
-	$feedback = 'Senha Incorreta!';
-} elseif ( isset($_GET['logout'])){
-	$feedback = 'Você saiu do sistema';
-} elseif ( isset($_GET['faca_o_login'])){
-	$feedback = 'Cadastro feito com sucesso! Faça o login para entrar no "Livro Solto"!';
-}
+} elseif ( isset($_GET['email_enviado'])){
+	$feedback = 'Email enviado com sucesso!';
+} 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -65,58 +58,95 @@ if( isset($_GET['acesso_proibido'])){
                         <span class="h1 fw-bold mb-0"><a href="index.php"><img src="../imagens/logo-e-favicon/Logo-sem-fundo-2.png" alt="Letra L com bordas arredondas seguida de Livro Solto, indicando o logo do site" width="25%"></a></span>
                       </div>
     
-                      <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Faça login com sua conta</h5>
+                      <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Digite o email que você usa para acessar nosso sistema</h5>
 
                       <?php if(isset($feedback)){?>
 				                <p class="my-2 alert alert-warning text-center">
 			                	<?= $feedback?> <i class="bi bi-x-circle-fill"></i> </p>
                       <?php } ?>
-    
+
                       <div class="form-outline mb-4">
                         <label class="form-label" for="email">Email</label>
                         <input type="email" name="email" class="form-control form-control-lg" />
                       </div>
-    
-                      <div class="form-outline mb-4">
-                        <label class="form-label" for="senha">Senha</label>
-                        <input type="password" name="senha" class="form-control form-control-lg" />
+                      <div >
+                      <button type="submit"  class="btn btn-primary ver-disponiveis" name="recuperar">Recuperar senha</button>
+                      <a href="login.php"><button  type="button"  class="btn btn-secondary" >Voltar ao Login</button></a>
+                      </form>
                       </div>
-    
-                      <div class="pt-1 mb-4">
-                        <a href="listadelivros.php" alt="Link para visualizar livros disponíveis e entrar na conta"><button class="btn btn-lg btn-block btn-login" type="submit" name="entrar">Login</button></a>
-                      </div>
-                      <a class="small text-muted esqueceu-a-senha" href="recuperaSenha.php" type="button" title="recuperar senha">Esqueceu a senha?</a>
                       <a href="cadastro.php" alt="Link para cadastrar uma conta"><p class="mb-5 pb-lg-2 mt-2" >Não possui cadastro? Cadastre-se</p></a>
                       <a class="small text-muted termos mx-3" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Termos de uso</a>
                       <a href="#!" class="small text-muted privacidade" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalDois">Política de privacidade</a>
                     </form>
 <?php
-// Verificação de campos do formulário
-if (isset($_POST['entrar'])){
-if(empty($_POST['email']) || empty($_POST['senha'])){
-	header("location:login.php?campos_obrigatorios");
+// Verificação de email
+
+if (isset($_POST['recuperar'])){
+if (empty($_POST['email'])){
+	header("location:recuperasenha.php?campo_obrigatorio");
 } else {
   // Buscando um usuário no banco de dados para fazer o login 
   $usuario = new Usuario;
 	$usuario->setEmail($_POST['email']);
   $dados = $usuario->buscar();
+  $usuario->setId($dados['id']);
 	if (!$dados)	{
-		header ("location:login.php?nao_encontrado");
+		header ("location:recuperasenha.php?nao_encontrado");
 	} else {
-		if(password_verify($_POST['senha'], $dados['senha'])){
-      $sessao = new ControleDeAcesso;
-			$sessao->login($dados['id'], $dados['nome']);
-			header("location:listadelivros.php");
-		} else {
-      header ("location:login.php?senha_incorreta");
-		}
+    $recuperar = $usuario->novaSenha();
+
+    // var_dump($recuperar);
+    // die();
+
+
+        $mail = new PHPMailer();
+        $mail->CharSet = "UTF-8";
+        $recuperaEmail = $_POST['email'];
+        
+        try{
+        $mail->isSMTP();
+        $mail->Host = 'smtp.mailtrap.io';
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = 'tls';
+        $mail->Username = 'c1495e88955fa0';
+        $mail->Password = '37e3f22486e5b5';
+        $mail->Port = 2525;
+        
+        
+        $mail->setFrom('suporte@livrosolto.com.br');
+        $mail->addReplyTo('no-reply@email.com.br');
+        $mail->addAddress($recuperaEmail, $dados['nome']);
+        
+        
+        $mail->isHTML(true);
+        $mail->Subject = 'Recuperação de Senha - Livro Solto';
+        $mail->Body=
+        'Olá,'.$dados['nome'].'!<br>
+        
+        Você fez uma solicitação de recuperação de senha.<br><br>
+
+        Caso você tenha recebido esse email por engano, desconsidere. E não se preocupe! Essa mensagem foi enviada apenas para o seu email.<br><br>
+
+        Para voltar a acessar nossos recursos, utilize a senha abaixo. Não se esqueça de diferenciar os caracteres maiúsculos e minúsculos.<br><br>
+        
+        '.$recuperar.'<br><br>
+        
+        
+        ';
+        $mail->AltBody = 'Para visualizar essa mensagem acesse http://site.com.br/mail';
+        // $mail->addAttachment('/tmp/image.jpg', 'nome.jpg');
+        
+        $mail->send();
+          echo 'Mensagem enviada com sucesso.<br>';
+        
+        } catch (Exception $e) {
+          echo 'Erro: ' . $mail->ErrorInfo;
+        };
+        header("location:recuperasenha.php?email_enviado");
+		} }
 	}
-}
-
-// Criando sistema de recuperação de senha 
 
 
-}
 
 
 
@@ -210,53 +240,14 @@ aria-hidden="true">
         <div id="emailHelp" class="form-text" aria-placeholder="exemplo@gmail.com.br">exemplo@gmail.com.br</div>
         <?php
 
-if (isset($_POST['recuperar'])){
-
-$mail = new PHPMailer();
-$mail->CharSet = "UTF-8";
-$recuperaEmail = $_POST['recSenha'];
-
-try{
-$mail->isSMTP();
-$mail->Host = 'smtp.mailtrap.io';
-$mail->SMTPAuth = true;
-$mail->SMTPSecure = 'tls';
-$mail->Username = 'c1495e88955fa0';
-$mail->Password = '37e3f22486e5b5';
-$mail->Port = 2525;
 
 
-$mail->setFrom('suporte@livrosolto.com.br');
-$mail->addReplyTo('no-reply@email.com.br');
-$mail->addAddress($recuperaEmail, 'Nautico 700');
-$mail->addCC('lunagabri@gmail.com', 'Gabriel');
-// $mail->addBCC('email@email.com.br', 'Cópia Oculta');
-
-
-$mail->isHTML(true);
-$mail->Subject = 'Assunto do email';
-$mail->Body    = 'Este é o conteúdo da mensagem em <b>HTML!</b>';
-$mail->AltBody = 'Para visualizar essa mensagem acesse http://site.com.br/mail';
-// $mail->addAttachment('/tmp/image.jpg', 'nome.jpg');
-
-$mail->send();
-  echo 'Mensagem enviada com sucesso.<br>';
-
-} catch (Exception $e) {
-  echo 'Erro: ' . $mail->ErrorInfo;}
-};
 
 
 ?>
       </div>
 
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-      <button type="submit"  class="btn btn-primary ver-disponiveis" name="recuperar">Recuperar senha</button>
-      </form>
       
-
-        </div>
       </div>
     </div>
   </div>

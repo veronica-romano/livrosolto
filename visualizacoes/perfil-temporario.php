@@ -14,7 +14,7 @@ $livro = $detalhe->listarUm();
     <section class="col-6 mb-5 mt-5 card shadow-lg" style="max-width: 30rem;">
         <div class="col-3"><figure><img src="../imagem/<?=$livro['capa']?>" alt="<?=$livro['titulo']?>"></figure></div>
         <div class="card-footer">
-            <a class="btn btn-success form-control" href="atualiza-temporario.php?id=<?=$livro['id']?>">Atualizar</a>
+            <a class="btn btn-success form-control excluir" id="excluir" href="atualiza-temporario.php?id=<?=$livro['id']?>">Atualizar</a>
             <a class="btn btn-success form-control" href="exclui-temporario.php?id=<?=$livro['id']?>">Excluir</a>
         </div>
     </section>

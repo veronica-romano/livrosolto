@@ -58,11 +58,34 @@ class Livro{
             die("Erro: ".$erro->getMessage());
         }
     }
+    public function inserirRecebedor():void{
+        $sql = "INSERT INTO  livros(id_usuario_recebe) VALUES (:id_usuario_recebe) ";
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindParam(":id_usuario_recebe", $this->id_usuario_recebe, PDO::PARAM_INT);
+            $consulta->execute();
+        } catch (Exception $erro) {
+            die("Erro: ".$erro->getMessage());
+        }
+    }
     public function listarUm():array{
         $sql = "SELECT * FROM livros WHERE id = :id";
         try {
             $consulta = $this->conexao->prepare($sql);
             $consulta->bindParam(":id", $this->id, PDO::PARAM_INT);
+            $consulta->execute();
+            $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $erro) {
+            die("Erro: ".$erro->getMessage());
+        }
+        return $resultado;
+    }
+    public function listarPorUsuario():array{
+        $sql = "SELECT * FROM livros WHERE id = :id AND id_usuario_entrega = :id_usuario_entrega";
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindParam(":id", $this->id, PDO::PARAM_INT);
+            $consulta->bindParam(":id_usuario_entrega", $this->id_usuario_entrega, PDO::PARAM_INT);
             $consulta->execute();
             $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
         } catch (Exception $erro) {

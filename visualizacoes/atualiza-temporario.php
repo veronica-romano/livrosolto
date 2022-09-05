@@ -1,13 +1,14 @@
 <?php
-require_once "../vendor/autoload.php";
 use Projeto\Livro;
 use Projeto\Usuario;
 use Projeto\ControleDeAcesso;
+require_once "../vendor/autoload.php";
 $sessao = new ControledeAcesso;
 $sessao->login($_SESSION['id'], $_SESSION['nome']);
 $usuario = new Usuario;
+$livro = new Livro;
+$livro->setId($_GET['id']);
 if (isset($_POST['inserir'])) {
-  $livro = new Livro;
   $livro->setTitulo($_POST['titulo']);
   $livro->setAutor($_POST['autor']);
   $livro->setDescricao($_POST['descricao']);
@@ -15,10 +16,15 @@ if (isset($_POST['inserir'])) {
   $livro->setIdUsuarioEntrega($_SESSION['id']);
   $livro->setHorariosEntrega($_POST['horarios']);
   $livro->setDiasEntrega($_POST['dias']);
-  $imagem = $_FILES['imagem'];
+  if (empty($_FILES['imagem']['name'])) {
+        $livro->setCapa($dados['imagem']);
+    } else {
+        $livro->upload($_FILES['imagem']);
+        $livro->setCapa($_FILES['imagem']['name']);
+    }
   $livro->setCapa($imagem['name']);
   $livro->upload($imagem);
-  $livro->inserir();
+  $livro->atualizar();
   header("location:listadelivros.php");
 }
 ?>
@@ -125,7 +131,7 @@ if (isset($_POST['inserir'])) {
             <input class="form-control" type="file" name="imagem" accept=" image/jpg, image/png" id="upload">
           </div>
           <div class="enviar-foto form-signin mb-5">
-            <button class="mt-4 btn button-foto" name="inserir" id="inserir" type="submit">Enviar</button>
+            <button class="mt-4 btn button-foto" name="atualizar" id="atualizar" type="submit">Atualizar</button>
           </div>
         </form>
       </div>

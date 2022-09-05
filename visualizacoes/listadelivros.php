@@ -23,34 +23,47 @@ $listaDeLivros = $livros->listar();
     </style>
 
 
-    <div class="mt-4 ms-3"><form action="">
-        <label for="filtrar" class="filtrar">Filtrar</label>
-        <select name="filtrar" id="" class="select-livros">
-          <option></option>
-          <option>Romance</option>
-          <option>Terror</option>
-          <option>Fantasia</option>
-          <option>Ficção</option>
-          <option>Filosofia</option>
-          <option>Tecnologia</option>
-          <option>Saúde</option>
-          <option>Linguagem</option>
-        </select>
-    </form></div>
+    <div class="mt-4 ms-3 row">
+        <form action="" class="form-inline col-6">
+            <select name="filtrar" id="" class="select-livros form-control">
+                <option></option>
+                <option>Romance</option>
+                <option>Terror</option>
+                <option>Fantasia</option>
+                <option>Ficção</option>
+                <option>Filosofia</option>
+                <option>Tecnologia</option>
+                <option>Saúde</option>
+                <option>Linguagem</option>
+            </select>
+        </form>
+
+        <form class="form-inline col-6 justify-content-between">
+            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+        </form>
+    </div>
     <main class="p-3">
         <?php
         foreach ($listaDeLivros as $livros) {
             ?>
             <section class="linhaUm row mb-5 mt-5 card" style="max-width: 30rem;">
-            <div class="card-header text-center"><h3><?=$livros['titulo']?></h3></div>
-            <div class="col-3"><figure><img src="../imagens/livros/morro.jpg" alt="<?=$livros['titulo']?>"></figure></div>
+            <div class="card-header text-center">
+                <h3><?=$livros['titulo']?></h3>
+            </div>
+            <div class="col-3">
+                <figure><img src="../imagem/<?=$livros['capa']?>" ></figure>
+            </div>
             <h4><?=$livros['genero']?> de <?=$livros['autor']?></h4>
             <h5>Disponibilidade: <?=$livros['diasEntrega']?> , <?=$livros['horariosEntrega']?></h5>
-            <div><p><?=$livros['descricao']?></p></div>
+            <div>
+                <p><?=$livros['descricao']?></p>
+            </div>
             <div class="card-footer">
                 Usuário: <?=$livros['id_usuario_entrega']?> 
                 <a class="btn btn-primary" href="detalhes-livro.php?id=<?=$livros['id']?>">Ver detalhes</a>
-                <a class="btn btn-success" href="detalhes-livro.php?id=<?=$livros['id']?>">É esse!</a></div>
+                <a class="btn btn-success" href="detalhes-livro.php?id=<?=$livros['id']?>">É esse!</a>
+            </div>
             </section>
             <?php
             

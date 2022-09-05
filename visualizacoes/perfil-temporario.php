@@ -1,19 +1,21 @@
 <?php
-
 use Projeto\Livro;
-
+require_once "../vendor/autoload.php";
 require_once "../inc/cabecalho-logado.php";
 $detalhe = new Livro;
 $detalhe->setId($_GET['id']);
 $livro = $detalhe->listarUm();
-
 ?>
 
+    <title>perfil temporário</title>
+</head>
+<body>
 <article class="row d-flex justify-content-evenly ">
     <section class="col-6 mb-5 mt-5 card shadow-lg" style="max-width: 30rem;">
         <div class="col-3"><figure><img src="../imagem/<?=$livro['capa']?>" alt="<?=$livro['titulo']?>"></figure></div>
         <div class="card-footer">
-            <a class="btn btn-success form-control" href="detalhes-livro.php?id=<?=$livro['id']?>">É esse!</a>
+            <a class="btn btn-success form-control excluir" id="excluir" href="atualiza-temporario.php?id=<?=$livro['id']?>">Atualizar</a>
+            <a class="btn btn-success form-control" href="exclui-temporario.php?id=<?=$livro['id']?>">Excluir</a>
         </div>
     </section>
     <section class="col-6 mb-5 mt-5 card border border-light" style="max-width: 30rem;">
@@ -26,8 +28,9 @@ $livro = $detalhe->listarUm();
         </div>
     </section>
 </article>
-
 </body>
+</html>
+
 <?php
     require_once "../inc/rodape-geral.php"
 

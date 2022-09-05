@@ -35,13 +35,13 @@ $pagina = basename($_SERVER['PHP_SELF']);
                             alt="Página inicial">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php" alt="Link para equipe">Perfil</a>
+                        <a class="nav-link" href="perfil.php" alt="Link para equipe">Perfil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php" alt="Link para equipe">Anunciar</a>
+                        <a class="nav-link" href="tela-foto.php" alt="Link para equipe">Anunciar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php" alt="Link para equipe">Procurar</a>
+                        <a class="nav-link" href="listadelivros.php" alt="Link para equipe">Procurar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="?sair" alt="Link para equipe">Logout</a>

@@ -35,7 +35,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
                             alt="Página inicial">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php" alt="Link para equipe">Meu perfil</a>
+                        <a class="nav-link" href="login.php" alt="Link para equipe">Perfil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="login.php" alt="Link para equipe">Anunciar</a>

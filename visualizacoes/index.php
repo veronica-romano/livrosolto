@@ -26,29 +26,29 @@
 
     <main class="main-index">
         <section class="campoUm pt-4 pb-2 px-3 px-lg-0 justify-content-center d-lg-flex anime">
-            <div class="conteudo-um p-2 mt-5 col-lg-6 text-center textAnimation">
+            <div class="conteudo-um p-2 mt-5 col-lg-6 text-center ">
                 <h1>A importância da leitura</h1>
                 <p>A leitura nos proporciona enxergar a vida de outras formas, a sofisticar o pensamento, a criar um
                     mundo inteiramente nosso. Com a leitura, nos tornamos melhores para os outros e para nós mesmos.</p>
             </div>
             <div class="conteudo-dois pt-2 col-lg-4 text-center">
-                <img src="../imagens/img-index/pai-e-filha-com-livro.jpg" alt="Pai e filha realizando a leitura de um livro" class="imgUm imgAnimation">
+                <img src="../imagens/img-index/pai-e-filha-com-livro.jpg" alt="Pai e filha realizando a leitura de um livro" class="imgUm ">
             </div>
         </section>
 
         <section class="campoDois pt-4 px-3 px-lg-0 justify-content-center d-lg-flex anime">
             <div class="conteudo-tres pt-2 col-lg-4 text-center d-none d-md-none d-lg-inline pt-2">
                 <img src="../imagens/img-index/garota-lendo-com-fundo-preto-e-branco (2).jpg" alt="Moça lendo livro em uma foto preto e branco"
-                    class="imgDois imgAnimation">
+                    class="imgDois ">
             </div>
-            <div class="conteudo-quatro p-2 mt-5 col-lg-6 text-center d-none d-md-none  textAnimation">
+            <div class="conteudo-quatro p-2 mt-5 col-lg-6 text-center d-none d-md-none  ">
                 <h2>Aprender com quem já se foi</h2>
                 <p>Podemos aprender com pessoas que já se foram. Que eternizaram sua poesia, seu pensamento, sua criatividade entre as linhas
                     maravilhosas de um livro. 
                 </p>
             </div>
 
-            <div class="conteudo-quatro p-2 mt-5 col-lg-6 text-center d-md-block textAnimation">
+            <div class="conteudo-quatro p-2 mt-5 col-lg-6 text-center d-md-block ">
                 <h2>Aprender com quem já se foi</h2>
                 <p>Podemos aprender com pessoas que já se foram. Que eternizaram sua poesia, seu pensamento, sua criatividade entre as linhas
                     maravilhosas de um livro. Transcedemos o tempo, com uma página, um parágrafo, uma frase.</p>
@@ -56,12 +56,12 @@
 
             <div class="conteudo-tres pt-2 col-lg-4 text-center  d-md-block d-lg-none">
                 <img src="../imagens/img-index/garota-lendo-com-fundo-preto-e-branco (2).jpg" alt="Moça lendo livro em uma foto preto e branco"
-                    class="imgDois imgAnimation">
+                    class="imgDois ">
             </div>
         </section>
 
         <section class="campoTres px-3 px-lg-0 pt-4 pb-2 justify-content-center d-lg-flex anime">
-            <div class="conteudo-cinco p-2 mt-5 col-lg-6 text-center textAnimation">
+            <div class="conteudo-cinco p-2 mt-5 col-lg-6 text-center ">
                 <h3>Deitar-se no divã consigo mesmo</h3>
                 <p>Ao ler um livro, podemos até mesmo passar por um processo de análise, em que nós nos tornamos o analista e o analisado ao mesmo tempo.
                     Absorver um pensamento, desconstrui-lo e depois transformá-lo em uma nova reflexão é uma experiência que a leitura nos proporciona. 
@@ -70,7 +70,7 @@
                 </p>
             </div>
             <div class="conteudo-seis pt-2 pb-5 col-lg-4 text-center">
-                <img src="../imagens/img-index/garota-sentada-lendo.jpg" alt="Garota sentada em sua cama enquanto realiza a leitura do livro" class="imgTres imgAnimation">
+                <img src="../imagens/img-index/garota-sentada-lendo.jpg" alt="Garota sentada em sua cama enquanto realiza a leitura do livro" class="imgTres ">
             </div>
         </section>
 
@@ -93,7 +93,7 @@
 
             </div>
             <div class="sobreDois p-2 mt-5 col-lg-4 text-center"><img
-                    src="../imagens/img-index/garota-lendo-com-oculos-reduzida.jpg" alt="Garota de óculos, cabelo curto com um livro de capa esverdeada nas mãos" class="imgAnimation imgQuatro">
+                    src="../imagens/img-index/garota-lendo-com-oculos-reduzida.jpg" alt="Garota de óculos, cabelo curto com um livro de capa esverdeada nas mãos" class=" imgQuatro">
             </div>
             </div>
 

@@ -4,5 +4,8 @@
             "Projeto\\": "src/" 
         }
         
+    },
+    "require": {
+        "phpmailer/phpmailer": "^6.6"
     }
 }

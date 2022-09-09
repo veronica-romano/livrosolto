@@ -1,5 +1,5 @@
 <section class="equipe">
-        <h2 class="text-center pt-5 mb-5">Nossa equipe</h2>
+        <h2 class="text-center pt-5 mb-5 textAnimation">Nossa equipe</h2>
         <div class="divisao">
                 <div class="text-center col-12 col-md-6 col-lg-2 mb-5">
                     <img src="../imagens/integrantes/gabriel_luna.jpg" alt="Gabriel, rapaz de blusa preta, barba, com um fundo iluminado pelo sol" class="adriel">

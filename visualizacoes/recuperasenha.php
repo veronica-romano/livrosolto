@@ -121,7 +121,9 @@ if (empty($_POST['email'])){
         $mail->isHTML(true);
         $mail->Subject = 'Recuperação de Senha - Livro Solto';
         $mail->Body=
-        'Olá,'.$dados['nome'].'!<br>
+        '<div class="container text-center">
+        
+        Olá,'.$dados['nome'].'!<br><br>
         
         Você fez uma solicitação de recuperação de senha.<br><br>
 
@@ -131,7 +133,7 @@ if (empty($_POST['email'])){
         
         '.$recuperar.'<br><br>
         
-        
+        </div>
         ';
         $mail->AltBody = 'Para visualizar essa mensagem acesse http://site.com.br/mail';
         // $mail->addAttachment('/tmp/image.jpg', 'nome.jpg');

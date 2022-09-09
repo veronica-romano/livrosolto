@@ -30,7 +30,7 @@ if (isset($_POST['inserir'])) {
   require_once "../inc/cabecalho-geral.php";
 ?>
 <body>
-    <section class="row justify-content-center py-4">
+    <section class="row justify-content-center py-3">
     <article class="col-8 bg-white rounded shadow my-1 py-4">
 		
 		<h2 class="text-center">
@@ -39,22 +39,22 @@ if (isset($_POST['inserir'])) {
 				
         <form enctype="multipart/form-data" action="" method="post" id="form-inserir" name="form-inserir" class="needs-validation" novalidate>
           <div class="row g-3 mx-auto">
-            <div class="col-sm-12 col-md-6 col-lg-4" >
+            <div class="col-12" >
               <label for="firstName" class="form-label title">Título</label>
               <input type="text" class="form-control" id="firstName" name="titulo" placeholder="" value="" required>
             </div>
 
-            <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="col-12" >
               <label for="autor" class="form-label title">Autor</label>
               <input type="text" class="form-control" id="autor" placeholder="" name="autor" value="" required>
 
 
-            <div class="col-sm-12 col-md-6 col-lg-4">
+              <div class="col-12" >
               <label for="autor" class="form-label title">Descrição</label>
               <input type="text" class="form-control" id="descricao" placeholder="" name="descricao" value="" required>
 
 
-            <div class="col-md-6 col-lg-4">
+              <div class="col-12" >
               <label for="country" class="form-label categoria">Gênero</label>
               <select class="form-select" id="country" name="genero" required>
                 <option value=""></option>
@@ -69,7 +69,7 @@ if (isset($_POST['inserir'])) {
               </select>
             </div>
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-12" >
               <label for="country" class="form-label categoria">Dias de Entrega</label>
               <select class="form-select" id="dias" name="dias" required>
                 <option value=""></option>
@@ -82,7 +82,7 @@ if (isset($_POST['inserir'])) {
               </select>
 
             </div>
-            <div class="col-md-6 col-lg-4">
+            <div class="col-12" >
               <label for="country" class="form-label categoria">Horários de Entrega</label>
               <select class="form-select" id="country" name="horarios" required>
                 <option value=""></option>
@@ -94,12 +94,14 @@ if (isset($_POST['inserir'])) {
             </div>
           <hr class="my-4">
           </div>
+          <div class="text-center">
             <label for="formFile" class="form-label">Escolha um arquivo de imagem para envio</label>
           <div class="mb-3 text-center envio-de-arquivo">
             <input class="form-control" type="file" name="imagem" accept=" image/jpg, image/png" id="upload">
           </div>
           <div class="enviar-foto form-signin mb-5">
             <button class="mt-4 btn btn-success" name="inserir" id="inserir" type="submit">Enviar</button>
+          </div>
           </div>
         </form>
 		

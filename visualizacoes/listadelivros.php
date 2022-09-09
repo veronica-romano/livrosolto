@@ -1,4 +1,15 @@
-<!DOCTYPE html>
+<?php
+use Projeto\ControleDeAcesso;
+require_once "../vendor/autoload.php";
+$sessao = new ControleDeAcesso;
+if(isset($_SESSION['id'])){
+    require_once "../inc/cabecalho-logado.php";
+    } else {
+    require_once "../inc/cabecalho-geral.php"; 
+    }
+    
+?>    
+    <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -11,10 +22,11 @@
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="estilo.css">
 <?php
-require_once "../inc/cabecalho-geral.php";
+
 use Projeto\Livro;
 $livros = new Livro;
 $listaDeLivros = $livros->listar();
+
 ?>
     <style>
         .col-3{

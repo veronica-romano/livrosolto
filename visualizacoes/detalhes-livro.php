@@ -1,10 +1,26 @@
 <?php
 use Projeto\Livro;
-require_once "../inc/cabecalho-geral.php";
+use Projeto\ControleDeAcesso;
+require_once "../vendor/autoload.php";
+$sessao = new ControleDeAcesso;
+
+if(isset($_SESSION['id'])){
+    require_once "../inc/cabecalho-logado.php";
+    } else {
+    require_once "../inc/cabecalho-geral.php";
+    }
+
 $detalhe = new Livro;
 $detalhe->setId($_GET['id']);
 $livro = $detalhe->listarUm();
+
+
+
 ?>
+
+
+
+
 
 <article class="row d-flex justify-content-evenly ">
     <section class="col-6 mb-5 mt-5 card shadow-lg" style="max-width: 30rem;">

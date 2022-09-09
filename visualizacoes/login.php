@@ -105,7 +105,7 @@ if(empty($_POST['email']) || empty($_POST['senha'])){
 	} else {
 		if(password_verify($_POST['senha'], $dados['senha'])){
       $sessao = new ControleDeAcesso;
-			$sessao->login($dados['id'], $dados['nome']);
+			$sessao->login($dados['id'], $dados['nome'], $dados['tipo']);
 			header("location:listadelivros.php");
 		} else {
       header ("location:login.php?senha_incorreta");

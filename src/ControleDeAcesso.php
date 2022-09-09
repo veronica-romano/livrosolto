@@ -10,10 +10,11 @@ final class ControleDeAcesso{
     }
 
     public function verificaAcesso():void{
-        if(!isset($_SESSION['id']))
+        if(!isset($_SESSION['id'])){
         session_destroy();
         header("location:../visualizacoes/login.php?acesso_proibido");
         die();
+        }
     }
 
     public function verificaAcessoAdmin():void {
@@ -23,9 +24,11 @@ final class ControleDeAcesso{
         }
     }
 
-    public function login(int $id, string $nome):void{
+    public function login(int $id, string $nome, string $tipo):void{
         $_SESSION['id'] = $id;
         $_SESSION['nome'] = $nome;
+        $_SESSION['tipo'] = $tipo;
+
     }
 
     public function logout():void{

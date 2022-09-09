@@ -8,7 +8,7 @@ require_once "../vendor/autoload.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="../visualizacoes/bootstrap.css">
-    <link rel="stylesheet" href="../visualizacoes/estilo.css">
+    <link rel="stylesheet" href="../visualizacoes/estilo.css"> 
 </head>
 <header>
 <nav class="navbar navbar-expand-md text-center ">
@@ -27,7 +27,7 @@ require_once "../vendor/autoload.php";
             <div class="col-4">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 hamb">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php"
+                        <a class="nav-link" aria-current="page" href="../visualizacoes/index.php"
                             alt="Página inicial">Início</a>
                     </li>
                     <li class="nav-item">

@@ -9,8 +9,16 @@
     <meta name="keywords" content="Troca de livros, doação de livros, apoio a leitura, literatura">
     <title>Livro Solto - Apoiando a leitura</title>
 <?php
-if()
+use Projeto\ControleDeAcesso;
+require_once "../vendor/autoload.php";
+$sessao = new ControleDeAcesso;
+
+if(isset($_SESSION['id'])){
+    require_once "../inc/cabecalho-logado.php";
+    } else {
     require_once "../inc/cabecalho-geral.php";
+    }
+
 ?>
 
 

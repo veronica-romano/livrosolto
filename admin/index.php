@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../visualizacoes/bootstrap.css">
     <title>Area administrativa</title>
     <?php
-        require_once "../inc/cabecalho-logado.php";
+        require_once "../inc/cabecalho-geral.php";
     ?>
 <body>
 <section>

@@ -56,6 +56,7 @@ class Usuario{
             die("Erro: ".$erro->getMessage());
         }
     }
+
     public function listarUm():array{
         $sql = "SELECT * FROM usuarios WHERE id = :id"; //named param
         try {

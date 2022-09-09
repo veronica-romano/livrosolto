@@ -23,26 +23,31 @@ $listaDeLivros = $livros->listar();
     </style>
 
 
-    <div class="mt-4 ms-3 row">
-        <form action="" class="form-inline col-6">
-            <select name="filtrar" id="" class="select-livros form-control">
-                <option></option>
-                <option>Romance</option>
-                <option>Terror</option>
-                <option>Fantasia</option>
-                <option>Ficção</option>
-                <option>Filosofia</option>
-                <option>Tecnologia</option>
-                <option>Saúde</option>
-                <option>Linguagem</option>
-            </select>
-        </form>
+<div class="mt-3 ms-3 d-flex justify-content-around">
+        <form class="col-6 col-sm-5 col-md-7 " action="">
+        <label for="filtrar" class="filtrar "></label>
+        <div class="d-flex">
+        <select name="filtrar" id="" class="form-select select-livros" >
+          <option>Escolha o tema</option>
+          <option>Romance</option>
+          <option>Terror</option>
+          <option>Fantasia</option>
+          <option>Ficção</option>
+          <option>Filosofia</option>
+          <option>Tecnologia</option>
+          <option>Saúde</option>
+          <option>Linguagem</option>
+        </select>
+        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">OK</button>
+</div>
+    </form>
+    <form autocomplete="off" class="d-flex" action="resultados.php" method="GET">
+        <input name="busca" class="form-control me-2" type="search" placeholder="Pesquise aqui" aria-label="Pesquise aqui">
+        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">OK</button>
+      </form>
 
-        <form class="form-inline col-6 justify-content-between">
-            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-        </form>
     </div>
+    
     <main class="p-3">
         <?php
         foreach ($listaDeLivros as $livros) {

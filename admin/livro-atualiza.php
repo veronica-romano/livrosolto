@@ -33,10 +33,8 @@ if (isset($_POST['inserir'])) {
 <head>
   <meta name="description" content="Anuncie seu livro para troca ou doação">
   <meta name="keywords" content="Anunciar livro, postar livro">
-  <title>Livro Solto - Anunciar livro</title>
-<?php
-  require_once "../inc/cabecalho-geral.php";
-?>
+  <title>Livro Solto - Atualizar livro</title>
+</head>
 <main class="main-anuncio justify-content-center p-3">
 <div class="container div-anuncio">
   <div>
@@ -44,7 +42,7 @@ if (isset($_POST['inserir'])) {
       <div class="border-shadow img-vazia container"><img src="../imagens/aguardando-imagem.png" id="img"
         alt="" class="img-vaziaa d-block mx-auto mb-3" width="140" height="170"></div>
       <!-- <img class="d-block mx-auto mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
-      <h2>Postagem de livro</h2>
+      <h2>Atualização de livro</h2>
       <p class="lead">Insira as informações do livro que será carregado e anunciado para possíveis doações ou trocas</p>
     </div>
 

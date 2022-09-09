@@ -35,7 +35,7 @@ if (isset($_POST['inserir'])) {
 <div class="container div-anuncio">
   <div>
     <div class="py-5 text-center">
-      <div class="border-shadow img-vazia container"><img src="../imagens/aguardando-imagem.png" id="img"
+      <div class="border-shadow img-vazia container"><img src="../imagens/aguardando-imagem.jpg" id="img"
         alt="" class="img-vaziaa d-block mx-auto mb-3" width="140" height="170"></div>
       <!-- <img class="d-block mx-auto mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
       <h2>Postagem de livro</h2>

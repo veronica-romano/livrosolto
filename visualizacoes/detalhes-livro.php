@@ -1,6 +1,6 @@
 <?php
 use Projeto\Livro;
-require_once "../inc/cabecalho-logado.php";
+require_once "../inc/cabecalho-geral.php";
 $detalhe = new Livro;
 $detalhe->setId($_GET['id']);
 $livro = $detalhe->listarUm();

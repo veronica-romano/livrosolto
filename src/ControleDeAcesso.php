@@ -23,7 +23,7 @@ final class ControleDeAcesso{
         }
     }
 
-    public function login(int $id, string $nome){
+    public function login(int $id, string $nome):void{
         $_SESSION['id'] = $id;
         $_SESSION['nome'] = $nome;
     }

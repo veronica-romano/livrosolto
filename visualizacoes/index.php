@@ -9,6 +9,7 @@
     <meta name="keywords" content="Troca de livros, doação de livros, apoio a leitura, literatura">
     <title>Livro Solto - Apoiando a leitura</title>
 <?php
+if()
     require_once "../inc/cabecalho-geral.php";
 ?>
 

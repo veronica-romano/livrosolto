@@ -1,12 +1,9 @@
 <?php
-
 use Projeto\Livro;
-
 require_once "../inc/cabecalho-logado.php";
 $detalhe = new Livro;
 $detalhe->setId($_GET['id']);
 $livro = $detalhe->listarUm();
-
 ?>
 
 <article class="row d-flex justify-content-evenly ">

@@ -4,7 +4,7 @@ use Projeto\Usuario;
 use Projeto\ControleDeAcesso;
 require_once "../vendor/autoload.php";
 $sessao = new ControledeAcesso;
-$sessao->login($_SESSION['id'], $_SESSION['nome']);
+$sessao->login($_SESSION['id'], $_SESSION['nome'], $_SESSION['tipo']);
 $usuario = new Usuario;
 $livro = new Livro;
 $livro->setId($_GET['id']);

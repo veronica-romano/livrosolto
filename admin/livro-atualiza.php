@@ -10,10 +10,11 @@ if(isset($_SESSION['id'])){
 }
   $sessao = new ControledeAcesso;
   $sessao->login($_SESSION['id'], $_SESSION['nome']);
-  $usuario = new Usuario;
+
   $detalhe = new Livro;
   $detalhe->setId($_GET['id']);
-  $livro = $detalhe->listarUm();
+  $dados = $detalhe->listarUm();
+
 
 if (isset($_POST['atualizar'])) {
   $livro = new Livro;
@@ -27,15 +28,14 @@ if (isset($_POST['atualizar'])) {
   $livro->setDiasEntrega($_POST['dias']);
   if (empty($_FILES['imagem']['name'])) {
         $livro->setCapa($dados['imagem']);
-        $livro->upload($imagem);
+       
     } else {
         $livro->upload($_FILES['imagem']);
         $livro->setCapa($_FILES['imagem']['name']);
+    
     }
-
- 
   $livro->atualizar();
-  header("location:listadelivros.php");
+  header("location:livros.php");
 }
 ?>
     <meta name="description" content="Anuncie seu livro para troca ou doação">
@@ -57,17 +57,17 @@ if (isset($_POST['atualizar'])) {
                 <div class="col-sm-12 col-md-6 col-lg-4">
                   <label for="firstName" class="form-label title">Título</label>
                   <input type="text" class="form-control" id="firstName" name="titulo" placeholder="" value="
-                    <?= $livro['titulo']?>" required>
+                    <?= $dados['titulo']?>" required>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-4">
                   <label for="autor" class="form-label title">Autor</label>
                   <input type="text" class="form-control" id="autor" placeholder="" name="autor" value="
-                      <?= $livro['autor']?>" required>
+                      <?= $dados['autor']?>" required>
                 </div>
                 <div class="col-sm-12 col-md-6 col-lg-4">
                   <label for="autor" class="form-label title">Descrição</label>
                   <input type="text" class="form-control" id="descricao" placeholder="" name="descricao" value="
-                        <?= $livro['descricao']?>" required>
+                        <?= $dados['descricao']?>" required>
                 </div>
                 <div class="col-md-6 col-lg-4">
                   <label for="country" class="form-label categoria">Gênero</label>

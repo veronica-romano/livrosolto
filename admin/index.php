@@ -10,14 +10,10 @@
 <header>
 <?php
 use Projeto\ControleDeAcesso;
-require_once "./vendor/autoload.php";
+require_once "../vendor/autoload.php";
 $sessao = new ControleDeAcesso;
 
-if(isset($_SESSION['id'])){
-    require_once "../inc/cabecalho-logado.php";
-    } else {
-    require_once "../inc/cabecalho-geral.php";
-    }
+require_once "../inc/cabecalho-logado-admin.php";
 
 ?>
 </header>

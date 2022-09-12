@@ -1,18 +1,17 @@
 <?php
 use Projeto\ControleDeAcesso;
-require_once "./vendor/autoload.php";
+require_once "../vendor/autoload.php";
 $sessao = new ControleDeAcesso;
 $sessao->verificaAcesso();
 if(isset($_GET['sair'])) $sessao->logout();
 $pagina = basename($_SERVER['PHP_SELF']);
-
 ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
-    <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon" href="./imagens/logo-e-favicon/Logo-sem-fundo-2.png" type="image/x-icon">
+    <link rel="stylesheet" href="../bootstrap.css">
+    <link rel="stylesheet" href="../estilo.css">
 </head>
 <header>
 <nav class="navbar navbar-expand-md text-center ">
@@ -28,23 +27,26 @@ $pagina = basename($_SERVER['PHP_SELF']);
         </button>
         <div class="collapse navbar-collapse row justify-content-md-end justify-content-sm-center justify-content-center"
             id="navbarSupportedContent">
-            <div class="col-4">
+            <div class="col-6">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 hamb">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="index.php"
                             alt="Página inicial">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php" alt="Link para equipe">Meu perfil</a>
+                        <a class="nav-link" href="../perfil.php" alt="Perfil">Perfil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php" alt="Link para equipe">Anunciar</a>
+                        <a class="nav-link" href="../tela_foto.php" alt="Anunciar">Anunciar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php" alt="Link para equipe">Procurar</a>
+                        <a class="nav-link" href="../listadelivros.php" alt="Procurar livro ">Procurar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?sair" alt="Link para equipe">Logout</a>
+                        <a class="nav-link" href="./admin/index.php" alt="área administrativa">Área Administrativa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?sair" alt="sair">Logout</a>
                     </li>
                 </ul>
             </div>

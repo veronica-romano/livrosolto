@@ -18,7 +18,7 @@ if( isset($_GET['acesso_proibido'])){
 	$feedback = 'Usuário não encontrado';
 } elseif ( isset($_GET['senha_incorreta'])){
 	$feedback = 'Senha Incorreta!';
-} elseif ( isset($_GET['logout'])){
+} elseif ( isset($_GET['sair'])){
 	$feedback = 'Você saiu do sistema';
 } elseif ( isset($_GET['faca_o_login'])){
 	$feedback = 'Cadastro feito com sucesso! Faça o login para entrar no "Livro Solto"!';

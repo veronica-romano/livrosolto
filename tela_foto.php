@@ -28,10 +28,20 @@ if (isset($_POST['inserir'])) {
   <meta name="description" content="Anuncie seu livro para troca ou doação">
   <meta name="keywords" content="Anunciar livro, postar livro">
   <title>Livro Solto - Anunciar livro</title>
+</head>
+
+<header>
 <?php
-  require_once "./inc/cabecalho-geral.php";
+if(isset($_SESSION['id'])){
+  require_once "inc/cabecalho-logado.php";
+  } else {
+  require_once "inc/cabecalho-geral.php";
+  }
 ?>
-<main class="main-anuncio justify-content-center p-3">
+
+</header>
+
+  <main class="main-anuncio justify-content-center p-3">
 <div class="container div-anuncio">
   <div>
     <div class="py-5 text-center">

@@ -12,7 +12,7 @@ final class ControleDeAcesso{
     public function verificaAcesso():void{
         if(!isset($_SESSION['id'])){
         session_destroy();
-        header("location:../visualizacoes/login.php?acesso_proibido");
+        header("location:../login.php?acesso_proibido");
         die();
         }
     }
@@ -32,7 +32,7 @@ final class ControleDeAcesso{
     public function logout():void{
         session_start();
         session_destroy();
-        header("location:../visualizacoes/login.php?logout");
+        header("location:../login.php?sair");
         die();
     }
     

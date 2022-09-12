@@ -9,7 +9,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./imagens/logo-e-favicon/Logo-sem-fundo-2.png" type="image/x-icon">
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="estilo.css">
 </head>
@@ -17,7 +17,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
 <nav class="navbar navbar-expand-md text-center ">
     <div class="container mxe-md-5">
         <h1><a class="navbar-brand pt-2" href="index.php"><img
-                    src="../imagens/logo-e-favicon/Logo-sem-fundo-2.png"
+                    src="./imagens/logo-e-favicon/Logo-sem-fundo-2.png"
                     alt="Letra L com bordas arredondas seguida de Livro Solto, indicando o logo do site"
                     width="80px"></a></h1>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -34,19 +34,19 @@ $pagina = basename($_SERVER['PHP_SELF']);
                             alt="Página inicial">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="perfil.php" alt="Perfil">Perfil</a>
+                        <a class="nav-link" href="./perfil.php" alt="Perfil">Perfil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tela-foto.php" alt="Anunciar">Anunciar</a>
+                        <a class="nav-link" href="./tela_foto.php" alt="Anunciar">Anunciar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="listadelivros.php" alt="Procurar livro ">Procurar</a>
+                        <a class="nav-link" href="./listadelivros.php" alt="Procurar livro ">Procurar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./admin/index.php" alt="área administrativa">Área Administrativa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="?sair" alt="sair">Logout</a>
+                        <a class="nav-link" href="./login.php?sair" alt="sair">Logout</a>
                     </li>
                 </ul>
             </div>

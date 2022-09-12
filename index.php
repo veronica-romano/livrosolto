@@ -1,27 +1,22 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php
+use Projeto\ControleDeAcesso;
+require_once "./vendor/autoload.php";
+$sessao = new ControleDeAcesso;
 
-<head>
+if(isset($_SESSION['id'])){
+    require_once "./inc/cabecalho-logado.php";
+    } else {
+    require_once "./inc/cabecalho-geral.php";
+    }
+
+?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Doe, troque e busque livros com o Livro Solto">
     <meta name="keywords" content="Troca de livros, doação de livros, apoio a leitura, literatura">
     <title>Livro Solto - Apoiando a leitura</title>
-<?php
-use Projeto\ControleDeAcesso;
-require_once "../vendor/autoload.php";
-$sessao = new ControleDeAcesso;
-
-if(isset($_SESSION['id'])){
-    require_once "../inc/cabecalho-logado.php";
-    } else {
-    require_once "../inc/cabecalho-geral.php";
-    }
-
-?>
-
-
+</head>
     <section class=" col-8 section-desktop containe-fluid text-center shadow primeira-interacao">
 
         <h1>Tire a poeira do seu livro!</h1>
@@ -30,7 +25,7 @@ if(isset($_SESSION['id'])){
             <a href="tela_foto.php" alt="Anunciar livro" class="btn btn-inicial p-2">Anunciar livro</a>
             <a href="listadelivros.php" alt="Buscar livro" class="btn  btn-inicial p-2">Buscar livro</a>
         </div>
-        <img src="../imagens/img-index/colecao-de-livros-index.png" alt="Coleção de livros" class="img-primeira-interacao">
+        <img src="./imagens/img-index/colecao-de-livros-index.png" alt="Coleção de livros" class="img-primeira-interacao">
     </section>
 
     <main class="main-index">
@@ -41,13 +36,13 @@ if(isset($_SESSION['id'])){
                     mundo inteiramente nosso. Com a leitura, nos tornamos melhores para os outros e para nós mesmos.</p>
             </div>
             <div class="conteudo-dois pt-2 col-lg-4 text-center">
-                <img src="../imagens/img-index/pai-e-filha-com-livro.jpg" alt="Pai e filha realizando a leitura de um livro" class="imgUm ">
+                <img src="./imagens/img-index/pai-e-filha-com-livro.jpg" alt="Pai e filha realizando a leitura de um livro" class="imgUm ">
             </div>
         </section>
 
         <section class="campoDois pt-4 px-3 px-lg-0 justify-content-center d-lg-flex anime">
             <div class="conteudo-tres pt-2 col-lg-4 text-center d-none d-md-none d-lg-inline pt-2">
-                <img src="../imagens/img-index/garota-lendo-com-fundo-preto-e-branco (2).jpg" alt="Moça lendo livro em uma foto preto e branco"
+                <img src="./imagens/img-index/garota-lendo-com-fundo-preto-e-branco (2).jpg" alt="Moça lendo livro em uma foto preto e branco"
                     class="imgDois ">
             </div>
             <div class="conteudo-quatro p-2 mt-5 col-lg-6 text-center d-none d-md-none  ">
@@ -64,7 +59,7 @@ if(isset($_SESSION['id'])){
             </div>
 
             <div class="conteudo-tres pt-2 col-lg-4 text-center  d-md-block d-lg-none">
-                <img src="../imagens/img-index/garota-lendo-com-fundo-preto-e-branco (2).jpg" alt="Moça lendo livro em uma foto preto e branco"
+                <img src="./imagens/img-index/garota-lendo-com-fundo-preto-e-branco (2).jpg" alt="Moça lendo livro em uma foto preto e branco"
                     class="imgDois ">
             </div>
         </section>
@@ -79,7 +74,7 @@ if(isset($_SESSION['id'])){
                 </p>
             </div>
             <div class="conteudo-seis pt-2 pb-5 col-lg-4 text-center">
-                <img src="../imagens/img-index/garota-sentada-lendo.jpg" alt="Garota sentada em sua cama enquanto realiza a leitura do livro" class="imgTres ">
+                <img src="./imagens/img-index/garota-sentada-lendo.jpg" alt="Garota sentada em sua cama enquanto realiza a leitura do livro" class="imgTres ">
             </div>
         </section>
 
@@ -102,20 +97,16 @@ if(isset($_SESSION['id'])){
 
             </div>
             <div class="sobreDois p-2 mt-5 col-lg-4 text-center"><img
-                    src="../imagens/img-index/garota-lendo-com-oculos-reduzida.jpg" alt="Garota de óculos, cabelo curto com um livro de capa esverdeada nas mãos" class=" imgQuatro">
+                    src="./imagens/img-index/garota-lendo-com-oculos-reduzida.jpg" alt="Garota de óculos, cabelo curto com um livro de capa esverdeada nas mãos" class=" imgQuatro">
             </div>
             </div>
 
         </section>
     </main>
 
-
-
-
-  
 <?php
-    require_once "../inc/equipe.php";
-    require_once "../inc/rodape-geral.php";
+    require_once "./inc/equipe.php";
+    require_once "./inc/rodape-geral.php";
 ?>
     
     <script src="js/jquery-3.6.0.min.js"></script>

@@ -4,7 +4,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 use Projeto\Usuario;
 use Projeto\ControleDeAcesso;
-require_once "../vendor/autoload.php";
+require_once "./vendor/autoload.php";
 
 
 if( isset($_GET['campo_obrigatorio'])) {
@@ -28,7 +28,7 @@ if( isset($_GET['campo_obrigatorio'])) {
     <meta name="description" content="Faça seu login para liberar ou conseguir um livro">
     <meta name="keywords" content="login, entrar na conta, acesso a conta">
     <title>Livro Solto - Login</title>
-    <link rel="shortcut icon" href="../imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="estilo.css">
     <link href="signin.css" rel="stylesheet">
@@ -45,7 +45,7 @@ if( isset($_GET['campo_obrigatorio'])) {
             <div class="card" style="border-radius: 1rem;">
               <div class="row g-0">
                 <div class="col-md-6 col-lg-5 d-none d-md-block">
-                  <img src="../imagens/login_e_cadastro/garota-com-livro.jpg"
+                  <img src="./imagens/login_e_cadastro/garota-com-livro.jpg"
                     alt="Garota de blusa rosa e delineado amarelo com um livro na mão direita" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
                 </div>
                 <div class="col-md-6 col-lg-7 d-flex align-items-center">

@@ -1,6 +1,6 @@
 <?php
 use Projeto\ControleDeAcesso;
-require_once "../vendor/autoload.php";
+require_once "./vendor/autoload.php";
 $sessao = new ControleDeAcesso;
 $sessao->verificaAcesso();
 if(isset($_GET['sair'])) $sessao->logout();
@@ -10,7 +10,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="estilo.css">
 </head>

@@ -1,7 +1,7 @@
 <?php
 ob_start();
 use Projeto\Usuario;
-require_once "../vendor/autoload.php";
+require_once "./vendor/autoload.php";
 
 if( isset($_GET['campos_obrigatorios'])) {
 	$feedback = 'Você deve preencher todos os campos!';
@@ -35,7 +35,7 @@ if(isset($_POST['cadastrar'])){
     <meta name="description" content="Faça seu cadastro para liberar ou conseguir um livro">
     <meta name="keywords" content="Cadastrar conta, criar conta">
     <title>Livro Solto - Cadastro</title>
-    <link rel="shortcut icon" href="../imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="estilo.css">
     <link href="signin.css" rel="stylesheet">
@@ -52,7 +52,7 @@ if(isset($_POST['cadastrar'])){
             <div class="card" style="border-radius: 1rem;">
               <div class="row g-0">
                 <div class="col-md-6 col-lg-5 d-none d-md-block">
-                  <img src="../imagens/login_e_cadastro/rapaz-com-livro.jpg"
+                  <img src="./imagens/login_e_cadastro/rapaz-com-livro.jpg"
                     alt="Rapaz de cabelo levemente cacheado e loiro, bigode, com um livro nas mãos enquanto olha fixamente para a frente" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
                 </div>
                 <div class="col-md-6 col-lg-7 d-flex align-items-center">
@@ -61,7 +61,7 @@ if(isset($_POST['cadastrar'])){
                     <form action="" method="POST" id="cadastro" name="cadastro">
                         <div class="d-flex align-items-center mb-3 pb-1">
                         <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
-                        <span class="h1 fw-bold mb-0"><a href="index.php"><img src="../imagens/logo-e-favicon/Logo-sem-fundo-2.png" alt="Letra L com bordas arredondas seguida de Livro Solto, indicando o logo do site" width="25%"></a></span>
+                        <span class="h1 fw-bold mb-0"><a href="index.php"><img src="./imagens/logo-e-favicon/Logo-sem-fundo-2.png" alt="Letra L com bordas arredondas seguida de Livro Solto, indicando o logo do site" width="25%"></a></span>
                       </div>
     
                       <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Crie sua conta</h5>

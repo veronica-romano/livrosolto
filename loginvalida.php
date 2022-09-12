@@ -8,7 +8,7 @@
     <meta name="description" content="Faça seu login para liberar ou conseguir um livro">
     <meta name="keywords" content="login, entrar na conta, acesso a conta">
     <title>Livro Solto - Login</title>
-    <link rel="shortcut icon" href="imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="estilo.css">
     <link href="signin.css" rel="stylesheet">

@@ -10,7 +10,7 @@
 <header>
 <?php
 use Projeto\ControleDeAcesso;
-require_once "../vendor/autoload.php";
+require_once "./vendor/autoload.php";
 $sessao = new ControleDeAcesso;
 
 if(isset($_SESSION['id'])){
@@ -37,6 +37,6 @@ if(isset($_SESSION['id'])){
 
 ?>
 <script src="../visualizacoes/bootstrap.bundle.js"></script>
-<script src="./js/confirm.js"></script>
+<script src="../js/confirm.js"></script>
 </body>
 </html>

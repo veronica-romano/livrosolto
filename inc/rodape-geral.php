@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-4 item social">
                 <ul class="d-flex justify-content-center gap-3">
-                    <li><a href="https://www.instagram.com/livrosoltooficial/" target="_blank" alt="link para instagram"><img src="../imagens/redes-sociais/instagram.png" alt="logo do instagram" width="40"></a></li>
+                    <li><a href="https://www.instagram.com/livrosoltooficial/" target="_blank" alt="link para instagram"><img src="./imagens/redes-sociais/instagram.png" alt="logo do instagram" width="40"></a></li>
                 </ul></div>
             </div>
             <p class="copyright">Livro Solto © 2022</p>
@@ -29,5 +29,5 @@
 </div>
 
 
-<script src="../visualizacoes/bootstrap.bundle.js"></script>
-<script src="../visualizacoes/nosso.js"></script>
+<script src="./visualizacoes/bootstrap.bundle.js"></script>
+<script src="./visualizacoes/nosso.js"></script>

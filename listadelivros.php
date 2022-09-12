@@ -1,11 +1,11 @@
 <?php
 use Projeto\ControleDeAcesso;
-require_once "../vendor/autoload.php";
+require_once "./vendor/autoload.php";
 $sessao = new ControleDeAcesso;
 if(isset($_SESSION['id'])){
-    require_once "../inc/cabecalho-logado.php";
+    require_once "./inc/cabecalho-logado.php";
     } else {
-    require_once "../inc/cabecalho-geral.php"; 
+    require_once "./inc/cabecalho-geral.php"; 
     }
     
 ?>    
@@ -18,7 +18,7 @@ if(isset($_SESSION['id'])){
     <meta name="description" content="Livros disponíveis para você agora">
     <meta name="keywords" content="livro, selecionar livro, leitura">
     <title>Livro Solto - Livros Disponíveis</title>
-    <link rel="shortcut icon" href="imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="estilo.css">
 <?php
@@ -90,7 +90,7 @@ $listaDeLivros = $livros->listar();
       
     </main>
 <?php
-require_once "../inc/rodape-geral.php"
+require_once "./inc/rodape-geral.php"
 ?>
 
 </body>

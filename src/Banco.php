@@ -1,7 +1,7 @@
 <?php
 namespace Projeto;
 use PDO, Exception;
-require_once "../vendor/autoload.php";
+require_once "./vendor/autoload.php";
 abstract class Banco{
 
     private static string $servidor = "localhost";

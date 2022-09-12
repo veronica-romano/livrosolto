@@ -1,5 +1,5 @@
 <?php
-require_once "../vendor/autoload.php";
+require_once "./vendor/autoload.php";
 use Projeto\Livro;
 use Projeto\Usuario;
 use Projeto\ControleDeAcesso;
@@ -29,15 +29,14 @@ if (isset($_POST['inserir'])) {
   <meta name="keywords" content="Anunciar livro, postar livro">
   <title>Livro Solto - Anunciar livro</title>
 <?php
-  require_once "../inc/cabecalho-geral.php";
+  require_once "./inc/cabecalho-geral.php";
 ?>
 <main class="main-anuncio justify-content-center p-3">
 <div class="container div-anuncio">
   <div>
     <div class="py-5 text-center">
-      <div class="border-shadow img-vazia container"><img src="../imagens/aguardando-imagem.jpg" id="img"
+      <div class="border-shadow img-vazia container"><img src="./imagens/aguardando-imagem.jpg" id="img"
         alt="" class="img-vaziaa d-block mx-auto mb-3" width="140" height="170"></div>
-      <!-- <img class="d-block mx-auto mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
       <h2>Postagem de livro</h2>
       <p class="lead">Insira as informações do livro que será carregado e anunciado para possíveis doações ou trocas</p>
     </div>
@@ -133,7 +132,7 @@ if (isset($_POST['inserir'])) {
   </div>
 </main>
 <?php
-require_once "../inc/rodape-geral.php"
+require_once "./inc/rodape-geral.php"
 
 ?>
 

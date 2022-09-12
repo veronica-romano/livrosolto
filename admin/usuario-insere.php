@@ -2,7 +2,6 @@
 use Projeto\Usuario;
 use Projeto\ControleDeAcesso;
 require_once "../vendor/autoload.php";
-require_once "../vendor/autoload.php";
 $sessao = new ControleDeAcesso;
 
 

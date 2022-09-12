@@ -6,9 +6,8 @@ require_once "../vendor/autoload.php";
 $sessao = new ControledeAcesso;
 $sessao->login($_SESSION['id'], $_SESSION['nome'], $_SESSION['tipo']);
 $usuario = new Usuario;
-$livro = new Livro;
 $livro->setId($_GET['id']);
-if (isset($_POST['inserir'])) {
+if (isset($_POST['atualizar'])) {
   $livro->setTitulo($_POST['titulo']);
   $livro->setAutor($_POST['autor']);
   $livro->setDescricao($_POST['descricao']);
@@ -53,6 +52,7 @@ if (isset($_POST['inserir'])) {
   
       </div>
       <div class="col-md-12 col-lg-12 text-center">
+        
         <form enctype="multipart/form-data" action="" method="post" id="form-inserir" name="form-inserir" class="needs-validation" novalidate>
           <div class="row g-3 mx-auto">
             <div class="col-sm-12 col-md-6 col-lg-4" >

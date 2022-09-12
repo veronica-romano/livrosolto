@@ -9,6 +9,7 @@ class Usuario{
     private string $senha;
     private string $livros;
     private string $senac;
+    private string $tipo;
     private PDO $conexao;
 
     public function __construct(){ //método que functiona na criação do objeto
@@ -71,13 +72,14 @@ class Usuario{
     }
 
     public function atualizar():void{
-        $sql = "UPDATE   usuarios SET nome = :nome, email = :email, senha = :senha, senac = :senac WHERE id = :id"; //named param
+        $sql = "UPDATE   usuarios SET nome = :nome, email = :email, senha = :senha, senac = :senac , tipo = :tipo WHERE id = :id"; //named param
         try {
             $consulta = $this->conexao->prepare($sql);
             $consulta->bindParam(":nome", $this->nome, PDO::PARAM_STR);
             $consulta->bindParam(":email", $this->email, PDO::PARAM_STR);
             $consulta->bindParam(":senha", $this->senha, PDO::PARAM_STR);
             $consulta->bindParam(":senac", $this->senac, PDO::PARAM_STR);
+            $consulta->bindParam(":tipo", $this->tipo, PDO::PARAM_STR);
             $consulta->bindParam(":id", $this->id, PDO::PARAM_INT);
             $consulta->execute();
         } catch (Exception $erro) {
@@ -200,5 +202,13 @@ class Usuario{
         return $this;
     }
 
+
+    public function getTipo(): string{
+        return $this->tipo;
+    }
+    public function setTipo(string $tipo){
+        $this->tipo = $tipo;
+        return $this;
+    }
 }
 

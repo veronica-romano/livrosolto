@@ -24,11 +24,9 @@ final class ControleDeAcesso{
         }
     }
 
-    public function login(int $id, string $nome, string $tipo):void{
+    public function login(int $id, string $nome):void{
         $_SESSION['id'] = $id;
         $_SESSION['nome'] = $nome;
-        $_SESSION['tipo'] = $tipo;
-
     }
 
     public function logout():void{

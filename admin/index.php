@@ -6,10 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../visualizacoes/bootstrap.css">
     <title>Area administrativa</title>
-    <?php
-        require_once "../inc/cabecalho-geral.php";
-    ?>
+</head>
+<header>
+<?php
+use Projeto\ControleDeAcesso;
+require_once "../vendor/autoload.php";
+$sessao = new ControleDeAcesso;
+
+if(isset($_SESSION['id'])){
+    require_once "../inc/cabecalho-logado.php";
+    } else {
+    require_once "../inc/cabecalho-geral.php";
+    }
+
+?>
+</header>
 <body>
+
+
 <section>
     <h1>Administrador</h1>
     <div>

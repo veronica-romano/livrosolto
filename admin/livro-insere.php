@@ -26,9 +26,21 @@ if (isset($_POST['inserir'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inserir Livro</title>
+</head>
+<header>    
     <?php
-  require_once "../inc/cabecalho-geral.php";
+use Projeto\ControleDeAcesso;
+require_once "../vendor/autoload.php";
+$sessao = new ControleDeAcesso;
+
+if(isset($_SESSION['id'])){
+    require_once "../inc/cabecalho-logado.php";
+    } else {
+    require_once "../inc/cabecalho-geral.php";
+    }
+
 ?>
+</header>
 <body>
     <section class="row justify-content-center py-3">
     <article class="col-8 bg-white rounded shadow my-1 py-4">

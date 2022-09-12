@@ -7,6 +7,8 @@ if( isset($_GET['campos_obrigatorios'])) {
 	$feedback = 'Você deve preencher todos os campos!';
 }elseif ( isset($_GET['senhas_diferentes'])){
 	$feedback = "Os campos 'Senha' e 'Confirmar senha' devem ser idênticos";
+} elseif (isset($_GET['email_existente'])){
+  $feedback = "O email inserido já existe. Tente novamente!";
 }
 
 $usuario = new Usuario;

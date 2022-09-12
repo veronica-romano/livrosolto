@@ -28,6 +28,14 @@ if (isset($_POST['atualizar'])) {
     <title>Atualizar Usuário</title>
 </head>
 <body>
+
+<?php
+  if(isset($_SESSION['id'])){
+  require_once "../inc/cabecalho-logado.php";
+  } else {
+  require_once "../inc/cabecalho-geral.php";
+}
+?>
     <section class="row justify-content-center py-4">
     <article class="col-8 bg-white rounded shadow my-1 py-4">
 		

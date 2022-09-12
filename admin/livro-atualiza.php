@@ -3,11 +3,7 @@ use Projeto\Livro;
 use Projeto\Usuario;
 use Projeto\ControleDeAcesso;
 require_once "../vendor/autoload.php";
-if(isset($_SESSION['id'])){
-  require_once "../inc/cabecalho-logado.php";
-  } else {
-  require_once "../inc/cabecalho-geral.php";
-}
+
   $sessao = new ControledeAcesso;
   $sessao->login($_SESSION['id'], $_SESSION['nome']);
 
@@ -42,6 +38,14 @@ if (isset($_POST['atualizar'])) {
     <meta name="keywords" content="Anunciar livro, postar livro">
     <title>Livro Solto - Atualizar livro</title>
   </head>
+<?php
+  if(isset($_SESSION['id'])){
+  require_once "../inc/cabecalho-logado.php";
+  } else {
+  require_once "../inc/cabecalho-geral.php";
+}
+?>
+
   <main class="main-anuncio justify-content-center p-3">
     <div class="container div-anuncio">
       <div>

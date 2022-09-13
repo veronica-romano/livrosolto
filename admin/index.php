@@ -1,5 +1,4 @@
 <?php
-<<<<<<< Updated upstream
 use Projeto\ControleDeAcesso;
 require_once "../vendor/autoload.php";
 $sessao = new ControleDeAcesso;
@@ -9,10 +8,6 @@ $sessao->verificaAcessoAdmin();
 
 ?>
 
-=======
-require_once "../vendor/autoload.php";
-?>
->>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,13 +20,6 @@ require_once "../vendor/autoload.php";
 
 <header>
 <?php
-<<<<<<< Updated upstream
-
-=======
-use Projeto\ControleDeAcesso;
-require_once "../vendor/autoload.php";
-$sessao = new ControleDeAcesso;
->>>>>>> Stashed changes
 require_once "../inc/cabecalho-logado-admin.php";
 ?>
 </header>
@@ -42,8 +30,8 @@ require_once "../inc/cabecalho-logado-admin.php";
 
 <section class="p-5 my-4 rounded-3 bg-white shadow">
     <div class="container-fluid py-1">        
-        <h2 class="display-4">Olá <?=$_SESSION['nome']?>!</h2>
-        <p class="fs-5">Você está no <b>painel de controle</b> do
+        <h2 class="display-4 p-5">Olá <?=$_SESSION['nome']?>!</h2>
+        <p class="fs-5 p-5">Você está no <b>painel de controle</b> do
 		Livro solto e seu <b>tipo de acesso</b> é <span class="badge bg-dark"> <?=$_SESSION['tipo']?> </span>.</p>
         <hr class="my-4">
 
@@ -54,15 +42,15 @@ require_once "../inc/cabecalho-logado-admin.php";
                 <?php } ?>
 
         <div class="d-grid gap-2 d-md-block text-center">
-            <a class="btn btn-dark bg-gradient btn-lg" href="meu-perfil.php">
+            <a class="btn btn-dark bg-gradient btn-lg" href="perfil.php">
                 <i class="bi bi-person"></i> <br>
-                Meu perfil
+               Ver perfil
             </a>
             <?php
             if ($_SESSION['tipo'] == 'admin') {
             ?>
     			<a class="btn btn-dark bg-gradient btn-lg" href="livros.php">
-                <i class="bi bi-tags"></i> <br>
+                <i class="bi bi-book"></i> <br>
                 Administrar Livros
                 </a>
                 <a class="btn btn-dark bg-gradient btn-lg" href="usuarios.php">

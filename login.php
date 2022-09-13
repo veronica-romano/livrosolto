@@ -23,7 +23,9 @@ if( isset($_GET['acesso_proibido'])){
 } elseif ( isset($_GET['faca_o_login'])){
 	$feedback = 'Cadastro feito com sucesso! Faça o login para entrar no "Livro Solto"!';
 } elseif ( isset($_GET['nao_autorizado'])){
-	$feedback = 'Esta página só pode ser acessada por administradores"!';
+	$feedback = 'Esta página só pode ser acessada por administradores!';
+} elseif ( isset($_GET['email_existente'])){
+	$feedback = 'Este email não está disponível. Tente novamente!';
 }
 ?>
 

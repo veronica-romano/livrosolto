@@ -70,7 +70,7 @@ require_once "../inc/cabecalho-logado-admin.php";
     
 </body>
 <?php
-    require_once "../inc/rodape-geral.php"
+    /* require_once "../inc/rodape-geral.php" */
 
 ?>
 <script src="../visualizacoes/bootstrap.bundle.js"></script>

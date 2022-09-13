@@ -3,7 +3,7 @@ use Projeto\Usuario;
 use Projeto\ControleDeAcesso;
 require_once "../vendor/autoload.php";
 $sessao = new ControleDeAcesso;
-
+$sessao->verificaAcessoAdmin();
 
 
 if (isset($_POST['inserir'])) {

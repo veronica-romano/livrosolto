@@ -1,3 +1,13 @@
+<?php
+use Projeto\ControleDeAcesso;
+require_once "../vendor/autoload.php";
+$sessao = new ControleDeAcesso;
+
+$sessao->verificaAcessoAdmin();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,9 +19,6 @@
 </head>
 <header>
 <?php
-use Projeto\ControleDeAcesso;
-require_once "../vendor/autoload.php";
-$sessao = new ControleDeAcesso;
 
 require_once "../inc/cabecalho-logado-admin.php";
 

@@ -1,6 +1,9 @@
 <?php
 use Projeto\Livro;
 require_once "../vendor/autoload.php";
+$sessao->verificaAcessoAdmin();
+
+
 
 if (isset($_POST['inserir'])) {
 	$livro = new Livro;

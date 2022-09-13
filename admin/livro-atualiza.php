@@ -4,7 +4,9 @@ use Projeto\Usuario;
 use Projeto\ControleDeAcesso;
 require_once "../vendor/autoload.php";
 
+
   $sessao = new ControledeAcesso;
+  $sessao->verificaAcessoAdmin();
   $sessao->login($_SESSION['id'], $_SESSION['nome']);
 
   $detalhe = new Livro;

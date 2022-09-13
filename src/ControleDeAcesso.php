@@ -18,15 +18,17 @@ final class ControleDeAcesso{
     }
 
     public function verificaAcessoAdmin():void {
-        if( $_SESSION['tipo'] !== 'admin' ){
-            header("location:nao-autorizado.php");
+        if($_SESSION['tipo'] !== 'admin' ){
+            session_destroy();
+            header("location:../login.php?nao_autorizado");
             die();
         }
     }
 
-    public function login(int $id, string $nome):void{
+    public function login(int $id, string $nome, string $tipo):void{
         $_SESSION['id'] = $id;
         $_SESSION['nome'] = $nome;
+        $_SESSION['tipo'] = $tipo;
     }
 
     public function logout():void{

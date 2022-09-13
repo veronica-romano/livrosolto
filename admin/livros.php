@@ -1,6 +1,9 @@
 <?php
-use Projeto\Livro;
+use Projeto\ControleDeAcesso;
 require_once "../vendor/autoload.php";
+$sessao = new ControleDeAcesso;
+$sessao->verificaAcessoAdmin();
+use Projeto\Livro;
 $livro = new Livro;
 $listaDeLivros = $livro->listar();
 ?>
@@ -16,9 +19,7 @@ $listaDeLivros = $livro->listar();
 
 <header>
 <?php
-use Projeto\ControleDeAcesso;
-require_once "../vendor/autoload.php";
-$sessao = new ControleDeAcesso;
+
 
 if(isset($_SESSION['id'])){
     require_once "../inc/cabecalho-logado.php";

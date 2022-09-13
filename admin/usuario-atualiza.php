@@ -1,5 +1,10 @@
 <?php
+use Projeto\ControleDeAcesso;
 use Projeto\Usuario;
+require_once "../vendor/autoload.php";
+$sessao = new ControleDeAcesso;
+$sessao->verificaAcessoAdmin();
+
 require_once "../vendor/autoload.php";
 $usuario = new Usuario;
 $usuario->setId($_GET['id']);

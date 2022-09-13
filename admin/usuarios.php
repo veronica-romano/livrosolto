@@ -1,8 +1,12 @@
 <?php
 use Projeto\Usuario;
+use Projeto\ControleDeAcesso;
 require_once "../vendor/autoload.php";
 $usuario = new Usuario;
+$sessao = new ControleDeAcesso;
 $listaDeUsuarios = $usuario->listar();
+
+$sessao->verificaAcessoAdmin();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,9 +19,8 @@ $listaDeUsuarios = $usuario->listar();
 </head>
 <header>
 <?php
-use Projeto\ControleDeAcesso;
-require_once "../vendor/autoload.php";
-$sessao = new ControleDeAcesso;
+
+
 
 if(isset($_SESSION['id'])){
     require_once "../inc/cabecalho-logado.php";

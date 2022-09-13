@@ -17,6 +17,7 @@ if(isset($_POST['cadastrar'])){
   $usuario->setNome($_POST['nome']);
   $usuario->setEmail($_POST['email']);
   $usuario->setSenac($_POST['senac']);
+  $usuario->setTipo('user');
   $usuario->setSenha($usuario->codificaSenha($_POST['senha']));
   $usuario->cadastrar();
   // header("location:login.php");

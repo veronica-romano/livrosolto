@@ -17,7 +17,7 @@ class Usuario{
     }
     
     public function cadastrar():void{
-        $sql="INSERT INTO usuarios(nome, email, senha, senac) VALUES (:nome, :email, :senha, :senac)";
+        $sql="INSERT INTO usuarios(nome, email, senha, senac, tipo) VALUES (:nome, :email, :senha, :senac, :tipo)";
 
         try{
             $consulta = $this->conexao->prepare($sql);
@@ -25,6 +25,7 @@ class Usuario{
             $consulta->bindParam(":email", $this->email, PDO::PARAM_STR);
             $consulta->bindParam(":senha", $this->senha, PDO::PARAM_STR);
             $consulta->bindParam(":senac", $this->senac, PDO::PARAM_STR);
+            $consulta->bindParam(":tipo", $this->tipo, PDO::PARAM_STR);
             $consulta->execute();
         } catch(Exception $erro){
             die ("Erro: ". $erro->getMessage());

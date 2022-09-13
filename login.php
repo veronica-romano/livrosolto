@@ -22,6 +22,8 @@ if( isset($_GET['acesso_proibido'])){
 	$feedback = 'Você saiu do sistema';
 } elseif ( isset($_GET['faca_o_login'])){
 	$feedback = 'Cadastro feito com sucesso! Faça o login para entrar no "Livro Solto"!';
+} elseif ( isset($_GET['nao_autorizado'])){
+	$feedback = 'Esta página só pode ser acessada por administradores"!';
 }
 ?>
 

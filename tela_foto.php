@@ -4,7 +4,7 @@ use Projeto\Livro;
 use Projeto\Usuario;
 use Projeto\ControleDeAcesso;
 $sessao = new ControledeAcesso;
-$sessao->login($_SESSION['id'], $_SESSION['nome']);
+$sessao->login($_SESSION['id'], $_SESSION['nome'], $_SESSION['tipo']);
 $usuario = new Usuario;
 if (isset($_POST['inserir'])) {
   $livro = new Livro;

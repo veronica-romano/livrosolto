@@ -42,12 +42,23 @@ $pagina = basename($_SERVER['PHP_SELF']);
                     <li class="nav-item">
                         <a class="nav-link" href="./listadelivros.php" alt="Procurar livro ">Procurar</a>
                     </li>
+                    <?php if($_SESSION['tipo'] === 'admin' ){ ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="./admin/index.php" alt="área administrativa">Área Administrativa</a>
+                        <a class="nav-link" href="./admin/index.php" alt="área administrativa">Admin</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="?sair" alt="sair">Logout</a>
                     </li>
+                    <?php } else {?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?sair" alt="sair">Logout</a>
+                    </li>
+                    <?php } ?>
+
+
+
+
                 </ul>
             </div>
         </div>

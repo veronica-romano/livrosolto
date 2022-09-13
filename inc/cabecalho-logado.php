@@ -46,7 +46,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
                         <a class="nav-link" href="./admin/index.php" alt="área administrativa">Área Administrativa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./login.php?sair" alt="sair">Logout</a>
+                        <a class="nav-link" href="?sair" alt="sair">Logout</a>
                     </li>
                 </ul>
             </div>

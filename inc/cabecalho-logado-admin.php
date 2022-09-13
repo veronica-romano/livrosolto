@@ -43,7 +43,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
                         <a class="nav-link" href="../listadelivros.php" alt="Procurar livro ">Procurar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./admin/index.php" alt="área administrativa">Área Administrativa</a>
+                        <a class="nav-link" href="./admin/index.php" alt="área administrativa">Admin</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="?sair" alt="sair">Logout</a>

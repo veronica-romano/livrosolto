@@ -32,7 +32,7 @@ final class ControleDeAcesso{
     public function logout():void{
         session_start();
         session_destroy();
-        header("location:../login.php?sair");
+        header("location:./login.php?sair");
         die();
     }
     

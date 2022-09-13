@@ -138,20 +138,25 @@ if(isset($_POST['cadastrar'])){
 
 
                      if (isset($_POST['cadastrar'])){
-
                       $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
                       $confirmaSenha = $_POST['confirma-senha'];
+
+                      $dados = $usuario->buscar();
                     
                       //Aqui nós vamos verificar se todos os campos estão preenhidos
                      if(empty($_POST['nome']) || empty($_POST['email']) || empty($_POST['senha']) || empty($_POST['confirma-senha']) || empty($_POST['senac'])){
 	                      header("location:cadastro.php?campos_obrigatorios");
-                      } elseif (password_verify($confirmaSenha ,$senha)){
-                     header ("location:login.php?faca_o_login");
-	                	}  else {
+                      } 
+                     if ($dados['email'] !== $_POST['email']) {
+                        if (password_verify($confirmaSenha ,$senha)){
+                     header("location:login.php?faca_o_login");
+	                	} else {
                       header ("location:cadastro.php?senhas_diferentes");
                   	}
+                    } else {
+                      header ("location:login.php?email_existente");
                     }
-                  
+                  }
                   ?>
                   </div>
                 </div>

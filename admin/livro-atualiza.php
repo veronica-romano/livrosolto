@@ -6,12 +6,12 @@ require_once "../vendor/autoload.php";
 
 
   $sessao = new ControledeAcesso;
-<<<<<<< Updated upstream
+
   $sessao->verificaAcessoAdmin();
   $sessao->login($_SESSION['id'], $_SESSION['nome']);
-=======
+
   $sessao->login($_SESSION['id'], $_SESSION['nome'], $_SESSION['tipo']);
->>>>>>> Stashed changes
+
 
   $detalhe = new Livro;
   $detalhe->setId($_GET['id']);

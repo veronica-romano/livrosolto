@@ -4,13 +4,13 @@ use Projeto\ControleDeAcesso;
 use Projeto\Usuario;
 
 require_once "./vendor/autoload.php";
-$livros = new Livro;
-$listaDeLivros = $livros->listar();
+//$livros = new Livro;
+//$listaDeLivros = $livros->listar();
 
-$sessao = new ControleDeAcesso;
-$usuario = new Usuario;
-$usuario->setId($_SESSION['id']);
-$listaDeUsuarios = $usuario->listarUm();
+//$sessao = new ControleDeAcesso;
+//$usuario = new Usuario;
+//$usuario->setId($_SESSION['id']);
+//$listaDeUsuarios = $usuario->listarUm();
 
 ?> 
 
@@ -85,7 +85,7 @@ $listaDeUsuarios = $usuario->listarUm();
             // foreach ($listaDeUsuarios as $perfil) {
               ?>
 
-                <img src="../imagens/integrantes/palloma.jpg" alt="Admin" class="rounded-circle"
+                <img src="./imagens/integrantes/palloma.jpg" alt="Admin" class="rounded-circle"
                   width="150">
                 <div class="mt-3">
                   <h4> Palloma Hortencio </h4>
@@ -179,15 +179,15 @@ $listaDeUsuarios = $usuario->listarUm();
                                                                 <div class="list_image">
 
                                                                 <?php
-                                                                foreach ($listaDeLivros as $livros) {
+                                                                //foreach ($listaDeLivros as $livros) {
                                                                   ?>
 
-                                                                <img src="./imagem/<?=$livros['capa']?>" class="image-fit-contain" alt="img" />
+                                                                <img src="./imagem/amanhecer-min.jpg?=/* $livros['capa'] */?>" class="image-fit-contain" alt="img" />
                                                                 </div>
 
                                                                 <div class="list_text">
                                                     
-                                                                    <h5 class="title"><?=$livros['titulo']?> </h5>
+                                                                    <h5 class="title"> Amanhecer</h5>
                                                      
                                                                 </div>
                                                             </div>
@@ -199,8 +199,8 @@ $listaDeUsuarios = $usuario->listarUm();
                                                                 <div class="col-sm-4 col-6">
                                                                     <div class="list_block_item">
                                                                         <a href="shop-details.html">
-                                                                        <img src="./imagem/<?=$livros['capa']?>" class="image-fit-contain" alt="img" />
-                                                                            <h6 class="title"><?=$livros['titulo']?></h6>
+                                                                        <img src="./imagem/escolha-min.jpg?=/* $livros['capa'] */?>" class="image-fit-contain" alt="img" />
+                                                                            <h6 class="title">A Escolha</h6>
                                                                         </a>
                                                                     </div>
                                                                 </div>                                    
@@ -209,7 +209,7 @@ $listaDeUsuarios = $usuario->listarUm();
                                                                 </div>
 
                                                                 <?php
-                                                                }
+                                                                //}
                                                                 ?>
                                                             </div>
                                                         </div>
@@ -340,10 +340,10 @@ $listaDeUsuarios = $usuario->listarUm();
                                                         <div class="col-sm-4 col-6">
                                                             <div class="list_block_item">
                                                                 <a href="shop-details.html">
-                                                                <img src="./imagem/<?=$livros['capa']?>"
+                                                                <img src="./imagem/hobbit.jpg"
                                                                  class="image-fit-contain" alt="img" />
                                                                    
-                                                                    <h6 class="title"><?=$livros['titulo']?></h6>
+                                                                    <h6 class="title"></h6>
                                                                 </a>
                                                             </div>
                                                         </div>

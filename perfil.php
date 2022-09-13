@@ -3,15 +3,15 @@ use Projeto\Livro;
 use Projeto\ControleDeAcesso;
 use Projeto\Usuario;
 
-require_once "../vendor/autoload.php";
+require_once "./vendor/autoload.php";
 $livros = new Livro;
 $listaDeLivros = $livros->listar();
 
+$sessao = new ControleDeAcesso;
 $usuario = new Usuario;
 $usuario->setId($_SESSION['id']);
-$listaDeUsuario = $usuario->listarUm();
+$listaDeUsuarios = $usuario->listarUm();
 
-$sessao = new ControleDeAcesso;
 ?> 
 
 <meta charset="UTF-8">
@@ -19,7 +19,7 @@ $sessao = new ControleDeAcesso;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="../visualizacoes/perfil.css">
+    <link rel="stylesheet" href="perfil.css">
     <title>Perfil </title>
     
 </head>
@@ -27,7 +27,7 @@ $sessao = new ControleDeAcesso;
 <nav class="navbar navbar-expand-md text-center ">
     <div class="container mxe-md-5">
         <h1><a class="navbar-brand pt-2" href="index.php"><img
-                    src="../imagens/logo-e-favicon/Logo-sem-fundo-2.png"
+          src="imagens/logo-e-favicon/Logo-sem-fundo-2.png"
                     alt="Letra L com bordas arredondas seguida de Livro Solto, indicando o logo do site"
                     width="80px"></a></h1>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -44,7 +44,7 @@ $sessao = new ControleDeAcesso;
                             alt="Página inicial">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php" alt="Link para equipe">Meu perfil</a>
+                        <a class="nav-link" href="login.php" alt="Link para equipe">Perfil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="login.php" alt="Link para equipe">Anunciar</a>
@@ -82,13 +82,13 @@ $sessao = new ControleDeAcesso;
               <div class="d-flex flex-column align-items-center text-center">
 
               <?php
-              foreach ($listaDeUsuario as $usuario) {
+            // foreach ($listaDeUsuarios as $perfil) {
               ?>
 
                 <img src="../imagens/integrantes/palloma.jpg" alt="Admin" class="rounded-circle"
                   width="150">
                 <div class="mt-3">
-                  <h4><?=$usuario['nome']?></h4>
+                  <h4> Palloma Hortencio </h4>
                   <p class="text-secondary mb-1">Secretaria</p>
                   <p class="text-muted font-size-sm">Penha - São Paulo</p>
                   <button class="btn btn-success">Mensagem</button>
@@ -137,8 +137,8 @@ $sessao = new ControleDeAcesso;
                 </div>
               </div>
 
-              <?php 
-              }
+              <?php  
+              // }
               ?>
 
               <hr>

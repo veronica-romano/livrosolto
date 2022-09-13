@@ -17,6 +17,7 @@ if(isset($_SESSION['id'])){
     <meta name="keywords" content="Troca de livros, doação de livros, apoio a leitura, literatura">
     <title>Livro Solto - Apoiando a leitura</title>
 </head>
+
     <section class=" col-8 section-desktop containe-fluid text-center shadow primeira-interacao">
 
         <h1>Tire a poeira do seu livro!</h1>

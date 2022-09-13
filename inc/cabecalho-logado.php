@@ -10,9 +10,10 @@ $pagina = basename($_SERVER['PHP_SELF']);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./imagens/logo-e-favicon/Logo-sem-fundo-2.png" type="image/x-icon">
-    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="./bootstrap.css">
+    <link rel="stylesheet" href="./estilo.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="estilo.css">
+    
 </head>
 <header>
 <nav class="navbar navbar-expand-md text-center ">

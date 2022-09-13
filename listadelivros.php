@@ -69,7 +69,7 @@ $listaDeLivros = $livros->listar();
                 <h3><?=$livros['titulo']?></h3>
             </div>
             <div class="col-3">
-                <figure><img src="../imagem/<?=$livros['capa']?>" ></figure>
+                <figure><img src="./imagem/<?=$livros['capa']?>" ></figure>
             </div>
             <h4><?=$livros['genero']?> de <?=$livros['autor']?></h4>
             <h5>Disponibilidade: <?=$livros['diasEntrega']?> , <?=$livros['horariosEntrega']?></h5>

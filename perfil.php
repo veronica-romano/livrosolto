@@ -4,10 +4,10 @@ use Projeto\ControleDeAcesso;
 use Projeto\Usuario;
 
 require_once "./vendor/autoload.php";
-//$livros = new Livro;
-//$listaDeLivros = $livros->listar();
+$livros = new Livro;
+$listaDeLivros = $livros->listar();
 
-//$sessao = new ControleDeAcesso;
+$sessao = new ControleDeAcesso;
 //$usuario = new Usuario;
 //$usuario->setId($_SESSION['id']);
 //$listaDeUsuarios = $usuario->listarUm();
@@ -179,15 +179,15 @@ require_once "./vendor/autoload.php";
                                                                 <div class="list_image">
 
                                                                 <?php
-                                                                //foreach ($listaDeLivros as $livros) {
+                                                                foreach ($listaDeLivros as $livros) {
                                                                   ?>
 
-                                                                <img src="./imagem/amanhecer-min.jpg?=/* $livros['capa'] */?>" class="image-fit-contain" alt="img" />
+                                                                <img src="./imagem/<?=$livros['capa']?>" class="image-fit-contain" alt="img" />
                                                                 </div>
 
                                                                 <div class="list_text">
                                                     
-                                                                    <h5 class="title"> Amanhecer</h5>
+                                                                    <h5 class="title"> <?=$livros['titulo']?> </h5>
                                                      
                                                                 </div>
                                                             </div>
@@ -199,8 +199,8 @@ require_once "./vendor/autoload.php";
                                                                 <div class="col-sm-4 col-6">
                                                                     <div class="list_block_item">
                                                                         <a href="shop-details.html">
-                                                                        <img src="./imagem/escolha-min.jpg?=/* $livros['capa'] */?>" class="image-fit-contain" alt="img" />
-                                                                            <h6 class="title">A Escolha</h6>
+                                                                        <img src="./imagem/<?=$livros['capa']?>" class="image-fit-contain" alt="img" />
+                                                                            <h6 class="title"><?=$livros['titulo']?></h6>
                                                                         </a>
                                                                     </div>
                                                                 </div>                                    
@@ -209,7 +209,7 @@ require_once "./vendor/autoload.php";
                                                                 </div>
 
                                                                 <?php
-                                                                //}
+                                                                }
                                                                 ?>
                                                             </div>
                                                         </div>
@@ -340,10 +340,10 @@ require_once "./vendor/autoload.php";
                                                         <div class="col-sm-4 col-6">
                                                             <div class="list_block_item">
                                                                 <a href="shop-details.html">
-                                                                <img src="./imagem/hobbit.jpg"
+                                                                <img src="./imagem/<?=$livros['capa']?>"
                                                                  class="image-fit-contain" alt="img" />
                                                                    
-                                                                    <h6 class="title"></h6>
+                                                                    <h6 class="title"><?=$livros['titulo']?></h6>
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -411,8 +411,8 @@ require_once "./vendor/autoload.php";
 </div>
 
 
-<script src="../visualizacoes/bootstrap.bundle.js"></script>
-<script src="../visualizacoes/nosso.js"></script>
+<script src="./bootstrap.bundle.js"></script>
+<script src="./nosso.js"></script>
 
 
 </body>

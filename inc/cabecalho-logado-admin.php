@@ -31,7 +31,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
             <div class="col-6">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 hamb">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php"
+                        <a class="nav-link" aria-current="page" href="../index.php"
                             alt="Página inicial">Início</a>
                     </li>
                     <li class="nav-item">

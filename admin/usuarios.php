@@ -19,15 +19,7 @@ $sessao->verificaAcessoAdmin();
 </head>
 <header>
 <?php
-
-
-
-if(isset($_SESSION['id'])){
-    require_once "../inc/cabecalho-logado.php";
-    } else {
-    require_once "../inc/cabecalho-geral.php";
-    }
-
+    require_once "../inc/cabecalho-logado-admin.php";
 ?>
 </header>
 <body>

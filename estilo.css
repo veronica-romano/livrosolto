@@ -451,7 +451,7 @@ nav li a:nth-child(1):hover, nav li a:nth-child(1):active{
                 display: flex;
             }
             
-            .card{
+            .cardCarrossel{
                 margin: 0 .5em;
                 width: calc(100%/3);
             }

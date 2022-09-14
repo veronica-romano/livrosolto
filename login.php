@@ -48,17 +48,17 @@ if( isset($_GET['acesso_proibido'])){
 <body class="body-login" style="background-color: #F2C335">
 
   
-  <main>
+<main>
     <section class="vh-99" >
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col col-xl-10">
             <div class="card" style="border-radius: 1rem;">
-              <div class="row g-0">
+              <div class="row g-0 col-12">
                 <div class="col-md-6 col-lg-5 d-none d-md-block">
                   <img src="./imagens/login_e_cadastro/garota-com-livro.jpg"
                     alt="Garota de blusa rosa e delineado amarelo com um livro na mão direita" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
-                </div>
+                    </div>
                 <div class="col-md-6 col-lg-7 d-flex align-items-center">
                   <div class="card-body p-4 p-lg-5 text-black">
     

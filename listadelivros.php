@@ -71,7 +71,7 @@ $listaDeLivros = $livros->listar();
    <div class="carousel-inner">
      <div class="carousel-item active">
        <div class="cards-wrapper">
-       <div class="card">
+       <div class="cardCarrossel">
          <div class="image-wrapper">
 
           <?php

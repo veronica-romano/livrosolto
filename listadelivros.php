@@ -64,7 +64,7 @@ $listaDeLivros = $livros->listar();
 
      <!-- Inicio do carrossel -->
 
-  <div id="carouselExampleControls" class="carousel carousel-dark slide d-none d-sm-block" data-bs-ride="carousel">
+  <div id="carouselExampleControls" class="carousel carousel-dark slide d-sm-block" data-bs-ride="carousel">
  
 
  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">

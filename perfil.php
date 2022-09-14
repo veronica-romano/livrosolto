@@ -156,7 +156,7 @@ $sessao = new ControleDeAcesso;
 
   <div class="d-grid gap-3">
 
-  <div class="p-2 bg-white border">
+  <div class="p-2 bg-white ">
     <!-- Card Livro 1  -->
             
     <div class="row gutters-sm">
@@ -231,7 +231,7 @@ $sessao = new ControleDeAcesso;
   </div>
 
 
-  <div class="p-2 bg-white border">
+  <div class="p-2 bg-white ">
      <!-- Card livro 2  -->
      <div class="row gutters-sm">
                         <div class="col-sm-12 mb-4">
@@ -300,7 +300,7 @@ $sessao = new ControleDeAcesso;
   </div>
 
 
-  <div class="p-2 bg-white border">
+  <div class="p-2 bg-white ">
     <!-- Card livro 3  -->
 
 

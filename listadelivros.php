@@ -61,49 +61,59 @@ $listaDeLivros = $livros->listar();
 
  </div>
 
-
-
-
-     <section>
-          <!-- Inicio do carrossel -->
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner"> <?php
+ <section>
+  <div class="container text-center my-3">
+    <h2 class="font-weight-light">Bootstrap 4 - Multi Item Carousel</h2>
+    <div class="row mx-auto my-auto">
+      <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+        <div class="carousel-inner w-100" role="listbox">
+          <div class="carousel-item active">
+            <div class="col-md-4">
+              <div class="card card-body">
+                <img class="img-fluid" src="http://placehold.it/380?text=1">
+              </div>
+            </div>
+          </div> <?php
           foreach ($listaDeLivros as $livros) {
-          ?> <div class="carousel-item active bg-primary">
-        <div class="cards-wrapper">
-          <img src="./imagem/
-						<?=$livros['capa']?>" alt="livro amanhecer">
-        </div>
-        <div class="card-body bg-warning">
-          <h5 class="card-title"> <?=$livros['titulo']?> </h5>
-          <p class="card-text"> <?=$livros['genero']?> de <?=$livros['autor']?> </p>
-          <p> <?=$livros['descricao']?> </p>
-          <p>Disponibilidade: <?=$livros['diasEntrega']?> , <?=$livros['horariosEntrega']?> </p>
-          <h6>Usuário: <?=$livros['id_usuario_entrega']?> </h6>
-          <a class="btn btn-primary" href="detalhes-livro.php?id=
-							<?=$livros['id']?>">Ver detalhes </a>
-          <a class="btn btn-success" href="detalhes-livro.php?id=
-							<?=$livros['id']?>">É esse! </a>
-        </div>
-      </div>
-      <div class="cardCarrossel">
-        <div class="image-wrapper"></div>
-      </div>
-    </div> <?php
+          ?> <div class="carousel-item">
+           <article>
+           <div class="col-md-4">
+              <div class="card card-header">
+                <img src="./imagem/<?=$livros['capa']?>" alt="livro<?=$livros['titulo']?>">
+              </div>
+            </div>
+            <div class="card-body bg-warning">
+              <h5 class="card-title"> <?=$livros['titulo']?> </h5>
+              <p class="card-text"> <?=$livros['genero']?> de <?=$livros['autor']?> </p>
+              <p> <?=$livros['descricao']?> </p>
+              <p>Disponibilidade: <?=$livros['diasEntrega']?> , <?=$livros['horariosEntrega']?> </p>
+              <h6>Usuário: <?=$livros['id_usuario_entrega']?> </h6>
+              <a class="btn btn-primary" href="detalhes-livro.php?id=
+										<?=$livros['id']?>">Ver detalhes </a>
+              <a class="btn btn-success" href="detalhes-livro.php?id=
+										<?=$livros['id']?>">É esse! </a>
+            </div>
+           </article>
+          
+        </div> <?php
           }
         ?>
+        </div>
+      </div>
+      <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<!-- Fim do carrossel -->
-     </section> 
+  <h5 class="mt-2">Advances one slide at a time</h5>
+  </div>
+</section>
+
 
 <?php
 require_once "inc/rodape-geral.php"

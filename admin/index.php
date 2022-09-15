@@ -42,7 +42,7 @@ require_once "../inc/cabecalho-logado-admin.php";
                 <?php } ?>
 
         <div class="d-grid gap-2 d-md-block text-center">
-            <a class="btn btn-dark bg-gradient btn-lg" href="perfil.php">
+            <a class="btn btn-dark bg-gradient btn-lg" href="../perfil.php">
                 <i class="bi bi-person"></i> <br>
                Ver perfil
             </a>

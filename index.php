@@ -61,11 +61,11 @@ if(isset($_SESSION['id'])){
 
         <section class="campoTres px-3 px-lg-0 pt-4 pb-2 justify-content-center d-lg-flex anime">
             <div class="conteudo-cinco p-2 mt-5 col-lg-6 text-center ">
-                <h3>Deitar-se no divã consigo mesmo</h3>
-                <p>Ao ler um livro, podemos até mesmo passar por um processo de análise, em que nós nos tornamos o analista e o analisado ao mesmo tempo.
+                <h3>Deite-se no divã</h3>
+                <p>Ao ler um livro, podemos passar por um processo de análise, nós nos tornamos o analista e o analisado ao mesmo tempo.
                     Absorver um pensamento, desconstrui-lo e depois transformá-lo em uma nova reflexão é uma experiência que a leitura nos proporciona. 
-                    Não deixe isso passar. Ou melhor, ajude a entregar a oportunidade para outras pessoas, de sentirem a transformação de um livro. Tire seu livro da poeira! 
-                    Doe ou Troque.
+                    Entregue a oportunidade para outras pessoas, deixe que sintam a transformação de um livro. Tire a poeira e 
+                    Solta o livro!
                 </p>
             </div>
             <div class="conteudo-seis pt-2 pb-5 col-lg-4 text-center">

@@ -8,7 +8,6 @@ require_once "../vendor/autoload.php";
   $sessao = new ControledeAcesso;
 
   $sessao->verificaAcessoAdmin();
-  $sessao->login($_SESSION['id'], $_SESSION['nome']);
 
   $sessao->login($_SESSION['id'], $_SESSION['nome'], $_SESSION['tipo']);
 
@@ -39,18 +38,14 @@ if (isset($_POST['atualizar'])) {
   $livro->atualizar();
   header("location:livros.php");
 }
+
+require_once "../inc/cabecalho-logado-admin.php"
 ?>
     <meta name="description" content="Anuncie seu livro para troca ou doação">
     <meta name="keywords" content="Anunciar livro, postar livro">
     <title>Livro Solto - Atualizar livro</title>
   </head>
-<?php
-  if(isset($_SESSION['id'])){
-  require_once "../inc/cabecalho-logado.php";
-  } else {
-  require_once "../inc/cabecalho-geral.php";
-}
-?>
+
 
   <main class="main-anuncio justify-content-center p-3">
     <div class="container div-anuncio">

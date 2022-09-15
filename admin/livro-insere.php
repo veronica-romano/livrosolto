@@ -1,6 +1,9 @@
 <?php
 use Projeto\Livro;
+use Projeto\ControleDeAcesso;
 require_once "../vendor/autoload.php";
+require_once "../vendor/autoload.php";
+$sessao = new ControleDeAcesso;
 $sessao->verificaAcessoAdmin();
 
 
@@ -28,22 +31,12 @@ if (isset($_POST['inserir'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../estilo.css">
     <title>Inserir Livro</title>
 </head>
-<header>    
-    <?php
-use Projeto\ControleDeAcesso;
-require_once "../vendor/autoload.php";
-$sessao = new ControleDeAcesso;
 
-if(isset($_SESSION['id'])){
-    require_once "../inc/cabecalho-logado.php";
-    } else {
-    require_once "../inc/cabecalho-geral.php";
-    }
-
-?>
-</header>
 <body>
     <section class="row justify-content-center py-3">
     <article class="col-8 bg-white rounded shadow my-1 py-4">

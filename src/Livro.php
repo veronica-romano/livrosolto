@@ -95,7 +95,7 @@ class Livro{
     }
 
     public function atualizar():void{
-        $sql = "UPDATE   usuarios SET titulo = :titulo, capa = :capa, descricao = :descricao, genero = :genero, id_usuario_entrega = :id_usuario_entrega, diasEntrega = :diasEntrega, horariosEntrega = :horariosEntrega, autor = :autor WHERE id = :id";
+        $sql = "UPDATE   livros SET titulo = :titulo, capa = :capa, descricao = :descricao, genero = :genero, id_usuario_entrega = :id_usuario_entrega, diasEntrega = :diasEntrega, horariosEntrega = :horariosEntrega, autor = :autor WHERE id = :id";
         try {
             $consulta = $this->conexao->prepare($sql);
             $consulta->bindParam(":titulo", $this->titulo, PDO::PARAM_STR);
@@ -108,6 +108,7 @@ class Livro{
             $consulta->bindParam(":autor", $this->autor, PDO::PARAM_STR);
             $consulta->bindParam(":id", $this->id, PDO::PARAM_INT);
             $consulta->execute();
+            
         } catch (Exception $erro) {
             die("Erro: ".$erro->getMessage());
         }

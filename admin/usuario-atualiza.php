@@ -5,7 +5,6 @@ require_once "../vendor/autoload.php";
 $sessao = new ControleDeAcesso;
 $sessao->verificaAcessoAdmin();
 
-require_once "../vendor/autoload.php";
 $usuario = new Usuario;
 $usuario->setId($_GET['id']);
 $dados = $usuario->listarUm();
@@ -13,6 +12,7 @@ if (isset($_POST['atualizar'])) {
 	$usuario->setNome($_POST['nome']);
 	$usuario->setEmail($_POST['email']);
 	$usuario->setSenac($_POST['senac']);
+	$usuario->setTipo($_POST['tipo']);
     if (empty ($_POST['senha'])) {
 		$usuario->setSenha($dados['senha']);
 		
@@ -22,6 +22,8 @@ if (isset($_POST['atualizar'])) {
 	$usuario->atualizar();
 	header("location:usuarios.php");
 }
+
+require_once "../inc/cabecalho-logado-admin.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,18 +31,11 @@ if (isset($_POST['atualizar'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../visualizacoes/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap.css">
     <title>Atualizar Usuário</title>
 </head>
 <body>
 
-<?php
-  if(isset($_SESSION['id'])){
-  require_once "../inc/cabecalho-logado.php";
-  } else {
-  require_once "../inc/cabecalho-geral.php";
-}
-?>
     <section class="row justify-content-center py-4">
     <article class="col-8 bg-white rounded shadow my-1 py-4">
 		

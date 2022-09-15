@@ -52,7 +52,7 @@ $listaDeLivros = $livros->listar();
         </select>
         <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">OK</button>
 
-</div>
+ </div>
     </form>
     <form autocomplete="off" class="d-flex" action="resultados.php" method="GET">
         <input name="busca" class="form-control me-2" type="search" placeholder="Pesquise aqui" aria-label="Pesquise aqui">
@@ -65,24 +65,24 @@ $listaDeLivros = $livros->listar();
      <!-- Inicio do carrossel -->
 
   <div id="carouselExampleControls" class="carousel carousel-dark slide d-sm-block" data-bs-ride="carousel">
- 
+  
 
- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+ <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"> 
+   <?php
+   foreach ($listaDeLivros as $livros) {
+   ?>
    <div class="carousel-inner">
      <div class="carousel-item active">
        <div class="cards-wrapper">
        <div class="cardCarrossel">
-         <div class="image-wrapper">
 
-          <?php
-          foreach ($listaDeLivros as $livros) {
-          ?>
-
-       <img src="./imagem/<?=$livros['capa']?>"  alt="livro amanhecer">
+       <div class="image-wrapper">
+       <img src="./imagem/<?=$livros['capa']?>">
        </div>
-         <div class="card-body">
-           <h5 class="card-title"><?=$livros['titulo']?></h5>
-           <p class="card-text"><?=$livros['genero']?> de <?=$livros['autor']?></p>
+
+         <div class="cardCarrossel-body">
+           <h5 class="cardCarrossel-title"><?=$livros['titulo']?></h5>
+           <p class="cardCarrossel-text"><?=$livros['genero']?> de <?=$livros['autor']?></p>
            <p><?=$livros['descricao']?></p>
            <p>Disponibilidade: <?=$livros['diasEntrega']?> , <?=$livros['horariosEntrega']?></p>
            <h6>Usuário: <?=$livros['id_usuario_entrega']?></h6>
@@ -91,24 +91,26 @@ $listaDeLivros = $livros->listar();
          </div>
        </div>
 
-       <?php
-          }
-        ?>
+      
 
          </div>
        </div>
      </div>
-   </div>
+   </div> 
+   <?php
+          }
+        ?>
  </div>
 
- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+ <!--  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
    <span class="visually-hidden">Previous</span>
  </button>
  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
    <span class="carousel-control-next-icon" aria-hidden="true"></span>
    <span class="visually-hidden">Next</span>
- </button>
+ </button> -->
+
 </div>
     
   

@@ -8,9 +8,10 @@ $livros = new Livro;
 $listaDeLivros = $livros->listar();
 
 $sessao = new ControleDeAcesso;
-//$usuario = new Usuario;
-//$usuario->setId($_SESSION['id']);
-//$listaDeUsuarios = $usuario->listarUm();
+$usuario = new Usuario;
+$usuario->setId($_SESSION['id']);
+$dados = $usuario->listarUm();
+
 
 ?> 
 
@@ -20,6 +21,7 @@ $sessao = new ControleDeAcesso;
     <link rel="shortcut icon" href="../imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="perfil.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <title>Perfil </title>
     
 </head>
@@ -68,7 +70,7 @@ $sessao = new ControleDeAcesso;
 
   <!-- Perfil -->
 
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
 
   <div class="container">
     <div class="main-body">
@@ -80,12 +82,12 @@ $sessao = new ControleDeAcesso;
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
-                    <img src="./imagens/integrantes/palloma.jpg" alt="Admin" class="rounded-circle" width="150">
+                    <img src="./imagens/img-index/profile.png" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
-                    <h4> Palloma Hortencio </h4>
-                  <p class="text-secondary mb-1">Secretaria</p>
-                  <p class="text-muted font-size-sm">Penha - São Paulo</p>
-                  <button class="btn btn-success">Mensagem</button>
+                    <h4> <?=$dados['nome']?> </h4>
+                  
+                  <p class="text-muted font-size-sm"><?=$dados['senac']?> - São Paulo</p>
+                  <button class="btn btn-success">Mensagem (indisponível)</button>
                     </div>
                   </div>
                 </div>
@@ -100,7 +102,7 @@ $sessao = new ControleDeAcesso;
                     <h6 class="mb-0">Nome</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  Palloma Hortencio
+                <?=$dados['nome']?>
                 </div>
               </div>
               <hr>
@@ -109,7 +111,7 @@ $sessao = new ControleDeAcesso;
                   <h6 class="mb-0">Email</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  palloma_hortencio@gmail.com
+                <?=$dados['email']?>
                 </div>
               </div>
               <hr>
@@ -118,7 +120,7 @@ $sessao = new ControleDeAcesso;
                   <h6 class="mb-0">Telefone</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  (00) 91234-5678
+                  (indisponível)
                 </div>
               </div>
               <hr>
@@ -127,13 +129,13 @@ $sessao = new ControleDeAcesso;
                   <h6 class="mb-0">Cidade</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  Penha de França - São Paulo
+                Senac <?=$dados['senac']?> - São Paulo
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-12">
-                      <a class="btn btn-success " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                      <a class="btn btn-success " target="__blank" href="">Editar(indisponível)</a>
                     </div>
                   </div>
                 </div>
@@ -168,65 +170,7 @@ $sessao = new ControleDeAcesso;
                             </svg></i>Seus interresses</h6>
                               
         
-        
-                              <div class="container">
-                                <div class="row accordion" id="accordion">
-                                    <div class="col-xl-12">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="card accordion-item product_list">
-                                                    <div class="card-header accordion-header">
-                                                        <div class="btn btn-link accordion-button" data-bs-toggle="collapse" data-bs-target="#itemone" aria-expanded="true">
-                                                            <div class="list_block">
-                                                                <div class="list_image">
-
-                                                                <?php
-                                                              //  foreach ($listaDeLivros as $livros) {
-                                                                  ?>
-
-                                                                <img src="./imagem/amanhecer-min.jpg" class="image-fit-contain" alt="img" />
-                                                                </div>
-
-                                                                <div class="list_text">
-                                                    
-                                                                    <h5 class="title"> Amanhecer </h5>
-                                                     
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div id="itemone" class="accordion-collapse collapse show" data-bs-parent="#accordion">
-                                                        <div class="card-body">
-                                                            <div class="row">
-                                                                <div class="col-sm-4 col-6">
-                                                                    <div class="list_block_item">
-                                                                        <a href="shop-details.html">
-                                                                        <img src="./imagem/hobbit-min.jpg" class="image-fit-contain" alt="img" />
-                                                                            <h6 class="title">O Hobbit</h6>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>                                    
-                                                              </div>                                    
-                                                                </div>                                    
-                                                                </div>
-
-                                                                <?php
-                                                             //   }
-                                                                ?>
-                                                            </div>
-                                                        </div>
-                            
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-                          </div>
-                      
-
-                <!-- Fim card livro 1 -->
+      
 
   </div>
 
@@ -397,39 +341,10 @@ $sessao = new ControleDeAcesso;
 
 
 
-<div class="footer-dark">
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-4 item justify-content-md-center">
-                    <h4>Links</h4>
-                    <ul>
-                        <li class="mb-2"><a href="index.php" alt="Início">Início</a></li>
-                        <li class="mb-2"><a href="login.php" alt="Entrar na conta">Login</a></li>
-                        <li class="mb-2"><a href="cadastro.php" alt="Cadastrar uma conta">Cadastro</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-sm-12 col-md-6 col-lg-4 item text">
-                    <h4>Sobre o Livro Solto</h4>
-                    <p>A Livro Solto é uma iniciativa sem fins lucrativos, que visa apenas influenciar positivamente
-                        a comunidade a nossa volta com o incentivo ao contato com a leitura.
-                    </p>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-4 item social">
-                <ul class="d-flex justify-content-center gap-3">
-                    <li><a href="https://www.instagram.com/livrosoltooficial/" target="_blank" alt="link para instagram"><img src="../imagens/redes-sociais/instagram.png" alt="logo do instagram" width="40"></a></li>
-                </ul></div>
-            </div>
-            <p class="copyright">Livro Solto © 2022</p>
-        </div>
-    </footer>
-</div>
+
 
 
 <script src="./bootstrap.bundle.js"></script>
 <script src="./nosso.js"></script>
-
-
 </body>
 </html>

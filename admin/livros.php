@@ -30,7 +30,7 @@ $listaDeLivros = $livro->listar();
             <h2 class="text-center">
             Livros <span class="badge bg-secondary"><?=count($listaDeLivros)?></span></h2>
 
-            <p><i class="bi bi-save"></i><a class="btn btn-success" href="livro-insere.php">Inserir novo livro</a></p>
+            <p><a class="btn btn-success" href="livro-insere.php"><i class="bi bi-save"></i>  Inserir novo livro</a></p>
 
             <table class="table table-hover">
                 <thead>

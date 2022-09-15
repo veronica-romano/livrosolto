@@ -59,11 +59,13 @@ $listaDeLivros = $livros->listar();
         <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">OK</button>
       </form>
 
-<<<<<<< HEAD
  </div>
 
- <div>
-  <!-- Inicio do carrossel -->
+
+
+
+     <section>
+          <!-- Inicio do carrossel -->
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner"> <?php
           foreach ($listaDeLivros as $livros) {
@@ -99,66 +101,9 @@ $listaDeLivros = $livros->listar();
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-=======
-    </div>
-
-
-     <!-- Inicio do carrossel -->
-
-  <div id="carouselExampleControls" class="carousel carousel-dark slide d-sm-block" data-bs-ride="carousel">
-  
-
- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"> 
-   <?php
-   foreach ($listaDeLivros as $livros) {
-   ?>
-   <div class="carousel-inner">
-     <div class="carousel-item active">
-       <div class="cards-wrapper">
-       <div class="cardCarrossel">
-
-       <div class="image-wrapper">
-       <img src="./imagem/<?=$livros['capa']?>">
-       </div>
-
-         <div class="cardCarrossel-body">
-           <h5 class="cardCarrossel-title"><?=$livros['titulo']?></h5>
-           <p class="cardCarrossel-text"><?=$livros['genero']?> de <?=$livros['autor']?></p>
-           <p><?=$livros['descricao']?></p>
-           <p>Disponibilidade: <?=$livros['diasEntrega']?> , <?=$livros['horariosEntrega']?></p>
-           <h6>Usuário: <?=$livros['id_usuario_entrega']?></h6>
-           <a class="btn btn-primary" href="detalhes-livro.php?id=<?=$livros['id']?>">Ver detalhes</a>
-           <a class="btn btn-success" href="detalhes-livro.php?id=<?=$livros['id']?>">É esse!</a>
-         </div>
-       </div>
-
-      
-
-         </div>
-       </div>
-     </div>
-   </div> 
-   <?php
-          }
-        ?>
- </div>
-
- <!--  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-   <span class="visually-hidden">Previous</span>
- </button>
- <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-   <span class="carousel-control-next-icon" aria-hidden="true"></span>
-   <span class="visually-hidden">Next</span>
- </button> -->
-
->>>>>>> d102f559dbd87f3bf9b4722237f48a1d0ff6e20c
 </div>
-  
-
 <!-- Fim do carrossel -->
-
-      
+     </section> 
 
 <?php
 require_once "inc/rodape-geral.php"

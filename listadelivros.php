@@ -59,58 +59,46 @@ $listaDeLivros = $livros->listar();
         <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">OK</button>
       </form>
 
-    </div>
-
-
-     <!-- Inicio do carrossel -->
-
-  <div id="carouselExampleControls" class="carousel carousel-dark slide d-sm-block" data-bs-ride="carousel">
- 
-
- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-   <div class="carousel-inner">
-     <div class="carousel-item active">
-       <div class="cards-wrapper">
-       <div class="cardCarrossel">
-         <div class="image-wrapper">
-
-          <?php
-          foreach ($listaDeLivros as $livros) {
-          ?>
-
-       <img src="./imagem/<?=$livros['capa']?>"  alt="livro amanhecer">
-       </div>
-         <div class="card-body">
-           <h5 class="card-title"><?=$livros['titulo']?></h5>
-           <p class="card-text"><?=$livros['genero']?> de <?=$livros['autor']?></p>
-           <p><?=$livros['descricao']?></p>
-           <p>Disponibilidade: <?=$livros['diasEntrega']?> , <?=$livros['horariosEntrega']?></p>
-           <h6>Usuário: <?=$livros['id_usuario_entrega']?></h6>
-           <a class="btn btn-primary" href="detalhes-livro.php?id=<?=$livros['id']?>">Ver detalhes</a>
-           <a class="btn btn-success" href="detalhes-livro.php?id=<?=$livros['id']?>">É esse!</a>
-         </div>
-       </div>
-
-       <?php
-          }
-        ?>
-
-         </div>
-       </div>
-     </div>
-   </div>
  </div>
 
- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-   <span class="visually-hidden">Previous</span>
- </button>
- <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-   <span class="carousel-control-next-icon" aria-hidden="true"></span>
-   <span class="visually-hidden">Next</span>
- </button>
+ <div>
+  <!-- Inicio do carrossel -->
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner"> <?php
+          foreach ($listaDeLivros as $livros) {
+          ?> <div class="carousel-item active bg-primary">
+        <div class="cards-wrapper">
+          <img src="./imagem/
+						<?=$livros['capa']?>" alt="livro amanhecer">
+        </div>
+        <div class="card-body bg-warning">
+          <h5 class="card-title"> <?=$livros['titulo']?> </h5>
+          <p class="card-text"> <?=$livros['genero']?> de <?=$livros['autor']?> </p>
+          <p> <?=$livros['descricao']?> </p>
+          <p>Disponibilidade: <?=$livros['diasEntrega']?> , <?=$livros['horariosEntrega']?> </p>
+          <h6>Usuário: <?=$livros['id_usuario_entrega']?> </h6>
+          <a class="btn btn-primary" href="detalhes-livro.php?id=
+							<?=$livros['id']?>">Ver detalhes </a>
+          <a class="btn btn-success" href="detalhes-livro.php?id=
+							<?=$livros['id']?>">É esse! </a>
+        </div>
+      </div>
+      <div class="cardCarrossel">
+        <div class="image-wrapper"></div>
+      </div>
+    </div> <?php
+          }
+        ?>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
-    
   
 
 <!-- Fim do carrossel -->

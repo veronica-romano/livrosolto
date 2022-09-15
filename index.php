@@ -20,8 +20,8 @@ if(isset($_SESSION['id'])){
 
     <section class=" col-8 section-desktop containe-fluid text-center shadow primeira-interacao">
 
-        <h1>Tire a poeira do seu livro!</h1>
-        <h2>A gente te ajuda a arrumar um destino para ele</h2>
+        <h1>Redefina o propósito do seu livro!</h1>
+        <h2>A gente te ajuda a arrumar um pessoa para ele ajudar</h2>
         <div class="d-flex justify-content-center pt-5 mt-4 gap-5 botoes-interacao">
             <a href="tela_foto.php" alt="Anunciar livro" class="btn btn-inicial p-2">Anunciar livro</a>
             <a href="listadelivros.php" alt="Buscar livro" class="btn  btn-inicial p-2">Buscar livro</a>
@@ -32,7 +32,7 @@ if(isset($_SESSION['id'])){
     <main class="main-index">
         <section class="campoUm pt-4 pb-2 px-3 px-lg-0 justify-content-center d-lg-flex anime">
             <div class="conteudo-um p-2 mt-5 col-lg-6 text-center ">
-                <h1>A importância da leitura</h1>
+                <h1>Um significado para a leitura</h1>
                 <p>A leitura nos proporciona enxergar a vida de outras formas, a sofisticar o pensamento, a criar um
                     mundo inteiramente nosso. Com a leitura, nos tornamos melhores para os outros e para nós mesmos.</p>
             </div>
@@ -46,15 +46,9 @@ if(isset($_SESSION['id'])){
                 <img src="./imagens/img-index/garota-lendo-com-fundo-preto-e-branco (2).jpg" alt="Moça lendo livro em uma foto preto e branco"
                     class="imgDois ">
             </div>
-            <div class="conteudo-quatro p-2 mt-5 col-lg-6 text-center d-none d-md-none  ">
-                <h2>Aprender com quem já se foi</h2>
-                <p>Podemos aprender com pessoas que já se foram. Que eternizaram sua poesia, seu pensamento, sua criatividade entre as linhas
-                    maravilhosas de um livro. 
-                </p>
-            </div>
 
             <div class="conteudo-quatro p-2 mt-5 col-lg-6 text-center d-md-block ">
-                <h2>Aprender com quem já se foi</h2>
+                <h2>Aprender com Livros</h2>
                 <p>Podemos aprender com pessoas que já se foram. Que eternizaram sua poesia, seu pensamento, sua criatividade entre as linhas
                     maravilhosas de um livro. Transcedemos o tempo, com uma página, um parágrafo, uma frase.</p>
             </div>
@@ -81,11 +75,10 @@ if(isset($_SESSION['id'])){
 
         <section class="campoQuatro px-2 px-lg-0 pt-4 pb-4 justify-content-center d-lg-flex gap-5 anime">
             <div class="sobreUm p-2 mt-5 col-lg-5 text-center mx-lg-3">
-                <h2>O que nos une?</h2>
-                <p>A Livro Solto é uma iniciativa que uniu quatro estudantes do Técnico de Informática para Internet do
+                <h2>Quem somos?</h2>
+                <p>A Livro Solto é uma iniciativa que uniu estudantes do Técnico de Informática para Internet do
                     <strong><em>Senac Penha</em></strong> na construção de um projeto que visa acessibilizar o acesso aos livros através da
-                    interação da comunidade leitora, que poderá trocar ou doar obras entre si, utilizando-se de nosso
-                    site.
+                    interação da comunidade leitora, que poderá trocar ou doar obras entre si.
                     Enxergamos a leitura como um dos principais fatores de educação de uma civilização. Portanto, toda atitude, mesmo que pequena,
                     é um grande impulsionamento dessa causa. Pessoas que lêem, se educam. E, pessoas educadas, ajudam a mudar a realidade.
                 </p>

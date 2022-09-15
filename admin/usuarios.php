@@ -29,7 +29,7 @@ $sessao->verificaAcessoAdmin();
             <h2 class="text-center">
             Usuários <span class="badge bg-secondary"><?=count($listaDeUsuarios)?></span></h2>
 
-            <p><i class="bi bi-save"></i><a class="btn btn-success" href="usuario-insere.php">Inserir novo usuário</a></p>
+            <p><a class="btn btn-success" href="usuario-insere.php"><i class="bi bi-save"></i>  Inserir novo usuário</a></p>
 
             <table class="table table-hover">
                 <thead>

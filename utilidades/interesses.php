@@ -1,6 +1,4 @@
 //possível lista de interesses
-
-
 <div class="container">
     <div class="main-body">
       <div class="row gutters-sm">

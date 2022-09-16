@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `tecinternet_livrosolto`
 --
-
+CREATE DATABASE [IF NOT EXISTS] tecinternet_livrosolto;
 -- --------------------------------------------------------
 
 --

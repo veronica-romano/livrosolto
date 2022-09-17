@@ -1,5 +1,8 @@
 <?php
 use Projeto\ControleDeAcesso;
+use Projeto\Usuario;
+
+
 require_once "./vendor/autoload.php";
 $sessao = new ControleDeAcesso;
 if(isset($_SESSION['id'])){
@@ -8,6 +11,8 @@ if(isset($_SESSION['id'])){
     require_once "inc/cabecalho-geral.php"; 
     }
     
+
+  $usuario = new Usuario;
 ?>    
     <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,6 +31,11 @@ if(isset($_SESSION['id'])){
 use Projeto\Livro;
 $livros = new Livro;
 $listaDeLivros = $livros->listar();
+
+if (isset($_POST['receber'])) {
+  $userRecebe = $livros->inserirRecebedor();
+  
+}
 
 ?>
     <style>
@@ -64,8 +74,7 @@ $listaDeLivros = $livros->listar();
  <section>
  <?php
           foreach ($listaDeLivros as $livros) {
-          ?> <div class="carousel-item">
-           <article>
+          ?> 
            <div class="col-md-4">
               <div class="card card-header">
                 <img src="./imagem/<?=$livros['capa']?>" alt="livro<?=$livros['titulo']?>">
@@ -79,11 +88,13 @@ $listaDeLivros = $livros->listar();
               <h6>Usuário: <?=$livros['id_usuario_entrega']?> </h6>
               <a class="btn btn-primary" href="detalhes-livro.php?id=
 										<?=$livros['id']?>">Ver detalhes </a>
-              <a class="btn btn-success" href="detalhes-livro.php?id=
-										<?=$livros['id']?>">É esse! </a>
+
+               
+
+                    
             </div>
            </article>
-        </div> <?php
+        <?php
           }
         ?>
         

@@ -25,7 +25,7 @@ class Livro{
         } 
         $nome = $arquivo['name'];
         $temporario = $arquivo['tmp_name'];
-        $destino = "../imagem/".$nome;
+        $destino = "./imagem/".$nome;
         move_uploaded_file($temporario, $destino);
     }
 

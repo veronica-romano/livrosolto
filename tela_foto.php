@@ -4,6 +4,8 @@ use Projeto\Livro;
 use Projeto\Usuario;
 use Projeto\ControleDeAcesso;
 $sessao = new ControledeAcesso;
+if ($_SESSION) {
+$sessao = new ControledeAcesso;
 $sessao->login($_SESSION['id'], $_SESSION['nome'], $_SESSION['tipo']);
 $usuario = new Usuario;
 if (isset($_POST['inserir'])) {
@@ -21,6 +23,8 @@ if (isset($_POST['inserir'])) {
   $livro->inserir();
   header("location:listadelivros.php");
 }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

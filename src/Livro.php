@@ -5,6 +5,7 @@ use PDO, Exception;
 class Livro{
     public int $id;
     public string $titulo;
+    private $termo;
     public string $capa;
     public string $descricao;
     public string $genero;	
@@ -125,6 +126,20 @@ class Livro{
         }
     }
 
+    public function pesquisaLivro():array{
+        $sql= "SELECT titulo, capa, descricao, genero, id_usuario_entrega, diasEntrega, horariosEntrega, autor FROM livros WHERE titulo LIKE :termo OR genero LIKE :termo OR descricao LIKE :termo ORDER BY genero DESC";
+        try {
+            $consulta = $this->conexao->prepare($sql);
+            $consulta->bindValue(":termo", '%'.$this->termo.'%', PDO::PARAM_STR);
+            $consulta->execute();
+            $resultado = $consulta->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $erro) {
+            die("Erro: ".$erro->getMessage());
+        }
+        return $resultado;  
+    }
+    
+
 
 
 
@@ -213,6 +228,17 @@ class Livro{
     }
     public function setAutor(string $autor){
         $this->autor = filter_var($autor, FILTER_SANITIZE_SPECIAL_CHARS);
+        return $this;
+    }
+
+    public function getTermo()
+    {
+        return $this->termo;
+    }
+    public function setTermo($termo): self
+    {
+        $this->termo = filter_var($termo, FILTER_SANITIZE_SPECIAL_CHARS);
+
         return $this;
     }
 }

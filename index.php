@@ -20,8 +20,8 @@ if(isset($_SESSION['id'])){
 
     <section class=" col-8 section-desktop containe-fluid text-center shadow primeira-interacao">
 
-        <h1>Redefina o propósito do seu livro!</h1>
-        <h2>A gente te ajuda a arrumar um pessoa para ele ajudar</h2>
+        <h1>Redefina o propósito desse livro!</h1>
+        <h2>A gente te ajuda a encontrar alguém para ele.</h2>
         <div class="d-flex justify-content-center pt-5 mt-4 gap-5 botoes-interacao">
             <a href="tela_foto.php" alt="Anunciar livro" class="btn btn-inicial p-2">Anunciar livro</a>
             <a href="listadelivros.php" alt="Buscar livro" class="btn  btn-inicial p-2">Buscar livro</a>

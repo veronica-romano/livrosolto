@@ -78,19 +78,23 @@ if (isset($_POST['receber'])) {
   <?php
           foreach ($listaDeLivros as $livros) {
           ?> 
-      <div class="carousel-item active d-flex justify-content-around w-50">
+      <article class=" card d-block w-100d-flex justify-content-center">
+      <div class="carousel-item active d-flex justify-content-around w-50 ">
         <div class="card text-center ">
-          <img class="limite w-100" src="./imagem/<?=$livros['capa']?>" alt="livro<?=$livros['titulo']?>">
+          <div>
+            <img class="limite w-100 " src="./imagem/<?=$livros['capa']?>" alt="livro<?=$livros['titulo']?>">
+          </div>
           <div class="card-body w-100 text-center">
-          <h5 class="card-title"> <?=$livros['titulo']?> </h5>
-          <p class="card-text"> <?=$livros['genero']?> de <?=$livros['autor']?> </p>
-          <p> <?=$livros['descricao']?> </p>
-          <p>Disponibilidade: <?=$livros['diasEntrega']?> , <?=$livros['horariosEntrega']?> </p>
-          <a class="btn btn-primary" href="detalhes-livro.php?id=
-            <?=$livros['id']?>">Ver detalhes </a>                 
-        </div>
+            <h5 class="card-title"> <?=$livros['titulo']?> </h5>
+            <p class="card-text"> <?=$livros['genero']?> de <?=$livros['autor']?> </p>
+            <p> <?=$livros['descricao']?> </p>
+            <p>Disponibilidade: <?=$livros['diasEntrega']?> , <?=$livros['horariosEntrega']?> </p>
+            <a class="btn btn-primary" href="detalhes-livro.php?id=
+              <?=$livros['id']?>">Ver detalhes </a>                 
+          </div>
+          </div>
       </div>
-        </div>
+      </article>
 
     <?php
           }

@@ -33,7 +33,7 @@ if(isset($_SESSION['id'])){
     <?php
     foreach ($resultados as $livros) {
         ?>
-      <article class=" card d-block w-100">
+      <section class=" card d-block w-100">
       <div class="carousel-item active d-flex justify-content-around w-50 ">
         <div class="card text-center ">
           <div>
@@ -49,7 +49,7 @@ if(isset($_SESSION['id'])){
           </div>
           </div>
       </div>
-      </article>
+    </section>
         <?php
     }
     ?>

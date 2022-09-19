@@ -71,34 +71,40 @@ if (isset($_POST['receber'])) {
 
  </div> 
 
- <section>
-
- <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
- <div class="carousel-inner">
-  <?php
+ <section class="container">
+  <div class="row">
+    <?php
           foreach ($listaDeLivros as $livros) {
           ?> 
-      <article class=" card d-block w-100d-flex justify-content-center">
-      <div class="carousel-item active d-flex justify-content-around w-50 ">
+      <div class=" col col-lg-4 m-0">
+      <div class="d-block w-50 ">
         <div class="card text-center ">
           <div>
             <img class="limite w-100 " src="./imagem/<?=$livros['capa']?>" alt="livro<?=$livros['titulo']?>">
           </div>
           <div class="card-body w-100 text-center">
-            <h5 class="card-title"> <?=$livros['titulo']?> </h5>
-            <p class="card-text"> <?=$livros['genero']?> de <?=$livros['autor']?> </p>
-            <p> <?=$livros['descricao']?> </p>
-            <p>Disponibilidade: <?=$livros['diasEntrega']?> , <?=$livros['horariosEntrega']?> </p>
+            <h5 class="card-title"><?=$livros['titulo']?> </h5>
+            <!-- <p class="card-text">Gênero: <?=$livros['genero']?> </p>
+            <p class="card-text">Autor: <?=$livros['autor']?> </p>
+            <p>Descrição: <?=$livros['descricao']?> </p>
+            <p>Disponibilidade: <?=$livros['diasEntrega']?> , <?=$livros['horariosEntrega']?> </p> -->
             <a class="btn btn-primary" href="detalhes-livro.php?id=
               <?=$livros['id']?>">Ver detalhes </a>                 
           </div>
           </div>
       </div>
-      </article>
+          </div>
 
     <?php
           }
         ?>
+    </div>
+
+  </div>
+
+ <!-- <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+ <div class="carousel-inner">
+
 
 </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -111,7 +117,9 @@ if (isset($_POST['receber'])) {
   </button>
 </div>
 
-        
+         -->
+
+         
 </section>
 
 

@@ -32,11 +32,15 @@ require_once "./vendor/autoload.php";
                         <a class="nav-link" aria-current="page" href="index.php"
                             alt="Página inicial">Início</a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php" alt="Link para equipe">Login</a>
+                        <a class="nav-link" href="#quemsomos" alt="Link para a parte do Quem Somos">Quem Somos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cadastro.php" alt="Link para equipe">Cadastro</a>
+                        <a class="nav-link" href="login.php" alt="Link para a página de login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cadastro.php" alt="Link para a página de cadastro">Cadastro</a>
                     </li>
                 </ul>
             </div>

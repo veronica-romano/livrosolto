@@ -73,7 +73,7 @@ if(isset($_SESSION['id'])){
             </div>
         </section>
 
-        <section class="campoQuatro px-2 px-lg-0 pt-4 pb-4 justify-content-center d-lg-flex gap-5 anime">
+        <section id="quemsomos" class="campoQuatro px-2 px-lg-0 pt-4 pb-4 justify-content-center d-lg-flex gap-5 anime">
             <div class="sobreUm p-2 mt-5 col-lg-5 text-center mx-lg-3">
                 <h2>Quem somos?</h2>
                 <p>A Livro Solto é uma iniciativa que uniu estudantes do Técnico de Informática para Internet do

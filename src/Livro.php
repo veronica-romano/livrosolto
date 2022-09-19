@@ -60,9 +60,10 @@ class Livro{
         }
     }
     public function inserirRecebedor():void{
-        $sql = "INSERT INTO  livros(id_usuario_recebe) VALUES (:id_usuario_recebe) ";
+        $sql = "UPDATE livros SET id_usuario_recebe = :id_usuario_recebe WHERE id = :id";
         try {
             $consulta = $this->conexao->prepare($sql);
+            $consulta->bindParam(":id", $this->id, PDO::PARAM_INT);
             $consulta->bindParam(":id_usuario_recebe", $this->id_usuario_recebe, PDO::PARAM_INT);
             $consulta->execute();
         } catch (Exception $erro) {
@@ -127,7 +128,7 @@ class Livro{
     }
 
     public function pesquisaLivro():array{
-        $sql= "SELECT titulo, capa, descricao, genero, id_usuario_entrega, diasEntrega, horariosEntrega, autor FROM livros WHERE titulo LIKE :termo OR genero LIKE :termo OR descricao LIKE :termo ORDER BY genero DESC";
+        $sql= "SELECT titulo, id, capa, descricao, genero, id_usuario_entrega, diasEntrega, horariosEntrega, autor FROM livros WHERE titulo LIKE :termo OR genero LIKE :termo OR descricao LIKE :termo ORDER BY genero DESC";
         try {
             $consulta = $this->conexao->prepare($sql);
             $consulta->bindValue(":termo", '%'.$this->termo.'%', PDO::PARAM_STR);

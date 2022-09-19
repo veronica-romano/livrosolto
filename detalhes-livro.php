@@ -19,7 +19,7 @@ $livro = $detalhe->listarUm();
 <article class="row d-flex justify-content-evenly ">
     <section class="col-6 mb-5 mt-5 card shadow-lg" style="max-width: 30rem;">
         <div class="col-3">
-            <figure><img class="vw-25" src="./imagem/<?= $livro['capa'] ?>" alt="<?= $livro['titulo'] ?>"></figure>
+            <figure><img class="" src="./imagem/<?= $livro['capa'] ?>" alt="<?= $livro['titulo'] ?>"></figure>
         </div>
         <div class="card-footer">
             <a class="btn btn-success form-control" href="detalhes-livro.php?id=<?= $livro['id'] ?>">É esse!</a>
@@ -28,8 +28,8 @@ $livro = $detalhe->listarUm();
     <section class="col-6 mb-5 mt-5 card border border-light" style="max-width: 30rem;">
         <h3 class="mb-2 text-center"><?= $livro['titulo'] ?></h3>
         <h4 class="mb-4 mt-2 text-center"><?= $livro['genero'] ?> de <?= $livro['autor'] ?></h4>
-        <h5 class="mb-3 mt-3">Disponibilidade: <?= $livro['diasEntrega'] ?> , <?= $livro['horariosEntrega'] ?></h5>
-        <div class="mb-3 mt-3">
+        <h5 class="mb-3 mt-3 text-center">Disponibilidade: <?= $livro['diasEntrega'] ?> , <?= $livro['horariosEntrega'] ?></h5>
+        <div class="mb-3 mt-3 text-center">
             <h6>Descrição do livro: </h6>
             <p><?= $livro['descricao'] ?></p>
         </div>

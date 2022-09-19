@@ -134,3 +134,30 @@
                 </div>
               </div>
             </div>
+
+
+
+
+
+            //card Livros
+
+            <?php
+          foreach ($listaDeLivros as $livros) {
+          ?> 
+           <div class="col-md-4">
+              <div class="card card-header">
+                <img src="./imagem/<?=$livros['capa']?>" alt="livro<?=$livros['titulo']?>">
+              </div>
+            </div>
+            <div class="card-body bg-warning">
+              <h5 class="card-title"> <?=$livros['titulo']?> </h5>
+              <p class="card-text"> <?=$livros['genero']?> de <?=$livros['autor']?> </p>
+              <p> <?=$livros['descricao']?> </p>
+              <p>Disponibilidade: <?=$livros['diasEntrega']?> , <?=$livros['horariosEntrega']?> </p>
+              <h6>Usuário: <?=$livros['id_usuario_entrega']?> </h6>
+              <a class="btn btn-primary" href="detalhes-livro.php?id=
+										<?=$livros['id']?>">Ver detalhes </a>                 
+            </div>
+        <?php
+          }
+        ?>

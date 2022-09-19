@@ -46,7 +46,7 @@ if (isset($_POST['receber'])) {
 
 
 <div class="mt-3 ms-3 d-flex justify-content-around">
-        <form class="col-6 col-sm-5 col-md-7 " action="">
+        <!--<form class="col-6 col-sm-5 col-md-7 " action="">
         <label for="filtrar" class="filtrar "></label>
         <div class="d-flex">
         <select name="filtrar" id="" class="form-select select-livros" >
@@ -63,40 +63,50 @@ if (isset($_POST['receber'])) {
         <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">OK</button>
 
  </div>
-    </form>
+    </form>-->
     <form autocomplete="off" class="d-flex" action="resultados.php" method="GET">
         <input name="busca" class="form-control me-2" type="search" placeholder="Pesquise aqui" aria-label="Pesquise aqui">
         <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">OK</button>
       </form>
 
- </div>
+ </div> 
 
  <section>
- <?php
+
+ <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+ <div class="carousel-inner">
+  <?php
           foreach ($listaDeLivros as $livros) {
           ?> 
-           <div class="col-md-4">
-              <div class="card card-header">
-                <img src="./imagem/<?=$livros['capa']?>" alt="livro<?=$livros['titulo']?>">
-              </div>
-            </div>
-            <div class="card-body bg-warning">
-              <h5 class="card-title"> <?=$livros['titulo']?> </h5>
-              <p class="card-text"> <?=$livros['genero']?> de <?=$livros['autor']?> </p>
-              <p> <?=$livros['descricao']?> </p>
-              <p>Disponibilidade: <?=$livros['diasEntrega']?> , <?=$livros['horariosEntrega']?> </p>
-              <h6>Usuário: <?=$livros['id_usuario_entrega']?> </h6>
-              <a class="btn btn-primary" href="detalhes-livro.php?id=
-										<?=$livros['id']?>">Ver detalhes </a>
+      <div class="carousel-item active d-flex justify-content-around w-50">
+        <div class="card text-center ">
+          <img class="limite w-100" src="./imagem/<?=$livros['capa']?>" alt="livro<?=$livros['titulo']?>">
+          <div class="card-body w-100 text-center">
+          <h5 class="card-title"> <?=$livros['titulo']?> </h5>
+          <p class="card-text"> <?=$livros['genero']?> de <?=$livros['autor']?> </p>
+          <p> <?=$livros['descricao']?> </p>
+          <p>Disponibilidade: <?=$livros['diasEntrega']?> , <?=$livros['horariosEntrega']?> </p>
+          <a class="btn btn-primary" href="detalhes-livro.php?id=
+            <?=$livros['id']?>">Ver detalhes </a>                 
+        </div>
+      </div>
+        </div>
 
-               
-
-                    
-            </div>
-           </article>
-        <?php
+    <?php
           }
         ?>
+
+</div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Próxima</span>
+  </button>
+</div>
+
         
 </section>
 

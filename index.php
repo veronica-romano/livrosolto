@@ -23,11 +23,32 @@ if(isset($_SESSION['id'])){
         <h1>Redefina o propósito desse livro!</h1>
         <h2>A gente te ajuda a encontrar alguém para ele.</h2>
         <div class="d-flex justify-content-center pt-5 mt-4 gap-5 botoes-interacao">
-            <a href="tela_foto.php" alt="Anunciar livro" class="btn btn-inicial p-2">Anunciar livro</a>
+            <a  href="tela_foto.php" alt="Anunciar livro" class="btn btn-inicial p-2">Anunciar livro</a>
             <a href="listadelivros.php" alt="Buscar livro" class="btn  btn-inicial p-2">Buscar livro</a>
         </div>
         <img src="./imagens/img-index/colecao-de-livros-index.png" alt="Coleção de livros" class="img-primeira-interacao">
     </section>
+
+    <section class=" col-8 section-desktop containe-fluid text-center shadow primeira-interacao">
+<!-- 
+<h1>Redefina o propósito desse livro!</h1>
+<h2>A gente te ajuda a encontrar alguém para ele.</h2>
+<div class="d-flex justify-content-center pt-5 mt-4 gap-5 botoes-interacao">
+    <a <?php
+        if(!isset($_SESSION)){
+         ?>
+        href="login.php?acesso_proibido" alt="Anunciar livro" class="btn btn-inicial p-2">Anunciar livro</a>
+        <?php
+        } else {  
+        ?>
+        href="tela_foto.php" alt="Anunciar livro" class="btn btn-inicial p-2">Anunciar livro</a>
+        <?php
+        }
+        ?>
+    <a href="listadelivros.php" alt="Buscar livro" class="btn  btn-inicial p-2">Buscar livro</a>
+</div>
+<img src="./imagens/img-index/colecao-de-livros-index.png" alt="Coleção de livros" class="img-primeira-interacao">
+</section> -->
 
     <main class="main-index">
         <section class="campoUm pt-4 pb-2 px-3 px-lg-0 justify-content-center d-lg-flex anime">

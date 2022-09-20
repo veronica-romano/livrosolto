@@ -12,19 +12,14 @@ $detalhe = new Livro;
 $detalhe->setId($_GET['id']);
 $livro = $detalhe->listarUm();
 ?>
-<article class="row d-flex justify-content-evenly ">
-    <section class="col-6 mb-5 mt-5 card shadow-lg" style="max-width: 30rem;">
-        <div class="col-3">
-            <figure class="align-center"><img  src="./imagem/<?= $livro['capa'] ?>" alt="<?= $livro['titulo'] ?>"></figure>
-        </div>
-        <div class="card-footer">
-        <form action="" method="post">
-        <button class="btn btn-success form-control" type="submit" id="inserirRecebedor" name="inserirRecebedor">É esse! </button>
-        </form>
+<article class="row justify-content-evenly ">
+    <section class="col-md-8 mb-5 mt-5  card shadow-lg card" style="max-width: 48%;">
+        <div class=" card-body">
+                <img class="h-100 w-75" src="./imagem/<?= $livro['capa'] ?>" alt="<?= $livro['titulo'] ?>">
         </div>
     </section>
 
-    <section class="col-6 mb-5 mt-5 card border border-light" style="max-width: 30rem;">
+    <section class="col-6 mb-5 mt-5 card border border-light" style="max-width: 48%;">
         <h3 class="mb-2 text-center"><?= $livro['titulo'] ?></h3>
         <h4 class="mb-4 mt-2 text-center">Autor: <?= $livro['autor'] ?></h4>
         <h4 class="mb-4 mt-2 text-center">Gênero: <?= $livro['genero'] ?> de <?= $livro['autor'] ?></h4>
@@ -33,6 +28,11 @@ $livro = $detalhe->listarUm();
             <h6>Descrição do livro: </h6>
             <p><?= $livro['descricao'] ?></p>
         </div>
+        <form action="" method="post">
+                <button class="btn btn-success form-control" type="submit" id="inserirRecebedor" name="inserirRecebedor">
+                    É esse! 
+                </button>
+            </form>
     </section>
 
     <?php

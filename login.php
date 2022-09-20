@@ -1,4 +1,5 @@
 <?php
+ob_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -42,7 +43,7 @@ if( isset($_GET['acesso_proibido'])){
     <link rel="shortcut icon" href="./imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="estilo.css">
-    <link href="signin.css" rel="stylesheet">
+
 </head>
 
 <body class="body-login" style="background-color: #F2C335">
@@ -272,3 +273,6 @@ $mail->send();
 </body>
 
 </html>
+<?php
+ob_end_flush();
+?>

@@ -76,8 +76,8 @@ if (isset($_POST['receber'])) {
     <?php
           foreach ($listaDeLivros as $livros) {
           ?> 
-      <div class=" col col-lg-4 m-0">
-      <div class="d-block w-50 ">
+      <div class=" col col-lg-4 col-sm-12 m-0">
+      <div class="d-block w-lg-50 ">
         <div class="card text-center ">
           <div>
             <img class="limite w-100 " src="./imagem/<?=$livros['capa']?>" alt="livro<?=$livros['titulo']?>">

@@ -39,7 +39,6 @@ if(isset($_POST['cadastrar'])){
     <link rel="shortcut icon" href="./imagens/logo-e-favicon/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="estilo.css">
-    <link href="signin.css" rel="stylesheet">
     </head>
 
 
